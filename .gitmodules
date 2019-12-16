@@ -1,0 +1,3 @@
+[submodule "keyboardSwitcher"]
+	path = Input Sources/keyboardSwitcher
+	url = https://github.com/Lutzifer/keyboardSwitcher

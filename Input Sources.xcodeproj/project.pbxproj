@@ -3,24 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD649123A7F85B0008C06E /* AppDelegate.swift */; };
-		85CD649423A7F85B0008C06E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD649323A7F85B0008C06E /* ViewController.swift */; };
 		85CD649623A7F8600008C06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CD649523A7F8600008C06E /* Assets.xcassets */; };
-		85CD649923A7F8600008C06E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85CD649723A7F8600008C06E /* Main.storyboard */; };
+		85CD64B223A7FE440008C06E /* WLKeyboardSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CD64AC23A7FE430008C06E /* WLKeyboardSource.m */; };
+		85CD64B323A7FE440008C06E /* WLKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CD64B023A7FE430008C06E /* WLKeyboardManager.m */; };
+		85CD64B623A808F00008C06E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85CD64B423A808F00008C06E /* Main.storyboard */; };
+		85CD64B723A808F00008C06E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD64B523A808F00008C06E /* ViewController.swift */; };
+		85CD64BA23A814B30008C06E /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 85CD64B923A814B30008C06E /* HotKey */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		85CD648E23A7F85B0008C06E /* Input Sources.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Input Sources.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CD649123A7F85B0008C06E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85CD649323A7F85B0008C06E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85CD649523A7F8600008C06E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		85CD649823A7F8600008C06E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85CD649A23A7F8600008C06E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85CD649B23A7F8600008C06E /* Input_Sources.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Input_Sources.entitlements; sourceTree = "<group>"; };
+		85CD64AA23A7FD860008C06E /* Input Sources-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Input Sources-Bridging-Header.h"; sourceTree = "<group>"; };
+		85CD64AC23A7FE430008C06E /* WLKeyboardSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLKeyboardSource.m; path = keyboardSwitcher/Core/WLKeyboardSource.m; sourceTree = "<group>"; };
+		85CD64AD23A7FE430008C06E /* keyboardSwitcher-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "keyboardSwitcher-Bridging-Header.h"; path = "keyboardSwitcher/Core/keyboardSwitcher-Bridging-Header.h"; sourceTree = "<group>"; };
+		85CD64AE23A7FE430008C06E /* DLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLog.h; path = keyboardSwitcher/Core/DLog.h; sourceTree = "<group>"; };
+		85CD64AF23A7FE430008C06E /* WLKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLKeyboardManager.h; path = keyboardSwitcher/Core/WLKeyboardManager.h; sourceTree = "<group>"; };
+		85CD64B023A7FE430008C06E /* WLKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLKeyboardManager.m; path = keyboardSwitcher/Core/WLKeyboardManager.m; sourceTree = "<group>"; };
+		85CD64B123A7FE430008C06E /* WLKeyboardSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLKeyboardSource.h; path = keyboardSwitcher/Core/WLKeyboardSource.h; sourceTree = "<group>"; };
+		85CD64B423A808F00008C06E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		85CD64B523A808F00008C06E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CD64BA23A814B30008C06E /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +50,7 @@
 			children = (
 				85CD649023A7F85B0008C06E /* Input Sources */,
 				85CD648F23A7F85B0008C06E /* Products */,
+				85CD64A323A7FCE30008C06E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,14 +65,36 @@
 		85CD649023A7F85B0008C06E /* Input Sources */ = {
 			isa = PBXGroup;
 			children = (
+				85CD64B423A808F00008C06E /* Main.storyboard */,
+				85CD64B523A808F00008C06E /* ViewController.swift */,
+				85CD64AB23A7FE100008C06E /* keyboardSwitcher */,
 				85CD649123A7F85B0008C06E /* AppDelegate.swift */,
-				85CD649323A7F85B0008C06E /* ViewController.swift */,
 				85CD649523A7F8600008C06E /* Assets.xcassets */,
-				85CD649723A7F8600008C06E /* Main.storyboard */,
 				85CD649A23A7F8600008C06E /* Info.plist */,
 				85CD649B23A7F8600008C06E /* Input_Sources.entitlements */,
+				85CD64AA23A7FD860008C06E /* Input Sources-Bridging-Header.h */,
 			);
 			path = "Input Sources";
+			sourceTree = "<group>";
+		};
+		85CD64A323A7FCE30008C06E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85CD64AB23A7FE100008C06E /* keyboardSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				85CD64AE23A7FE430008C06E /* DLog.h */,
+				85CD64AD23A7FE430008C06E /* keyboardSwitcher-Bridging-Header.h */,
+				85CD64AF23A7FE430008C06E /* WLKeyboardManager.h */,
+				85CD64B023A7FE430008C06E /* WLKeyboardManager.m */,
+				85CD64B123A7FE430008C06E /* WLKeyboardSource.h */,
+				85CD64AC23A7FE430008C06E /* WLKeyboardSource.m */,
+			);
+			path = keyboardSwitcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,6 +113,9 @@
 			dependencies = (
 			);
 			name = "Input Sources";
+			packageProductDependencies = (
+				85CD64B923A814B30008C06E /* HotKey */,
+			);
 			productName = "Input Sources";
 			productReference = 85CD648E23A7F85B0008C06E /* Input Sources.app */;
 			productType = "com.apple.product-type.application";
@@ -107,6 +144,9 @@
 				Base,
 			);
 			mainGroup = 85CD648523A7F85B0008C06E;
+			packageReferences = (
+				85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
 			productRefGroup = 85CD648F23A7F85B0008C06E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85CD649623A7F8600008C06E /* Assets.xcassets in Resources */,
-				85CD649923A7F8600008C06E /* Main.storyboard in Resources */,
+				85CD64B623A808F00008C06E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,23 +173,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85CD649423A7F85B0008C06E /* ViewController.swift in Sources */,
+				85CD64B323A7FE440008C06E /* WLKeyboardManager.m in Sources */,
 				85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */,
+				85CD64B723A808F00008C06E /* ViewController.swift in Sources */,
+				85CD64B223A7FE440008C06E /* WLKeyboardSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		85CD649723A7F8600008C06E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				85CD649823A7F8600008C06E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		85CD649C23A7F8600008C06E /* Debug */ = {
@@ -281,6 +312,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "us.twopointzero.Input-Sources";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Input Sources/Input Sources-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -301,6 +333,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "us.twopointzero.Input-Sources";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Input Sources/Input Sources-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -327,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		85CD64B923A814B30008C06E /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 85CD648623A7F85B0008C06E /* Project object */;
 }
