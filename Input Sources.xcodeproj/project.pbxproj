@@ -12,7 +12,6 @@
 		85CD64B223A7FE440008C06E /* WLKeyboardSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CD64AC23A7FE430008C06E /* WLKeyboardSource.m */; };
 		85CD64B323A7FE440008C06E /* WLKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CD64B023A7FE430008C06E /* WLKeyboardManager.m */; };
 		85CD64B623A808F00008C06E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85CD64B423A808F00008C06E /* Main.storyboard */; };
-		85CD64B723A808F00008C06E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD64B523A808F00008C06E /* ViewController.swift */; };
 		85CD64BA23A814B30008C06E /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 85CD64B923A814B30008C06E /* HotKey */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		85CD64B023A7FE430008C06E /* WLKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLKeyboardManager.m; path = keyboardSwitcher/Core/WLKeyboardManager.m; sourceTree = "<group>"; };
 		85CD64B123A7FE430008C06E /* WLKeyboardSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLKeyboardSource.h; path = keyboardSwitcher/Core/WLKeyboardSource.h; sourceTree = "<group>"; };
 		85CD64B423A808F00008C06E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		85CD64B523A808F00008C06E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				85CD64B423A808F00008C06E /* Main.storyboard */,
-				85CD64B523A808F00008C06E /* ViewController.swift */,
 				85CD64AB23A7FE100008C06E /* keyboardSwitcher */,
 				85CD649123A7F85B0008C06E /* AppDelegate.swift */,
 				85CD649523A7F8600008C06E /* Assets.xcassets */,
@@ -175,7 +172,6 @@
 			files = (
 				85CD64B323A7FE440008C06E /* WLKeyboardManager.m in Sources */,
 				85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */,
-				85CD64B723A808F00008C06E /* ViewController.swift in Sources */,
 				85CD64B223A7FE440008C06E /* WLKeyboardSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
