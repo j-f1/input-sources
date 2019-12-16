@@ -18,23 +18,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: 25)
     let kb = WLKeyboardManager.shared()!
     let hotKey = HotKey(key: .space, modifiers: [.control])
+    let menu = NSMenu()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        statusItem.behavior = [.terminationOnRemoval]
         if let btn = statusItem.button {
             btn.image = #imageLiteral(resourceName: "AppIconTemplate")
             btn.imagePosition = .imageOverlaps
+            btn.target = self
+            btn.action = #selector(onclick)
+            btn.sendAction(on: [.rightMouseUp, .leftMouseUp])
         }
+
         render()
         NotificationCenter.default.addObserver(self, selector: #selector(render), name: NSTextInputContext.keyboardSelectionDidChangeNotification, object: nil)
 
-        hotKey.keyUpHandler = {
-            let currentId = self.kb.currentKeyboardLayout()!.inputSourceID
-            let layouts = self.kb.enabledLayouts()!
-            let idx = layouts.firstIndex { (source) -> Bool in
-                source.inputSourceID == currentId
-            }!
-            let next = layouts[(idx + 1) % layouts.count]
-            self.kb.selectLayout(withID: next.inputSourceID)
+        hotKey.keyUpHandler = selectNextLayout
+    }
+
+    @objc func onclick() {
+        let event = NSApplication.shared.currentEvent!
+        if event.type == .leftMouseUp && !event.modifierFlags.contains(.control) && !event.modifierFlags.contains(.option) {
+            selectNextLayout()
+            render()
+        } else {
+            statusItem.popUpMenu(menu)
         }
     }
 
@@ -43,9 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func render() {
-        let menu = statusItem.menu ?? NSMenu()
         menu.removeAllItems()
-
         let current = kb.currentKeyboardLayout()
         for layout in kb.enabledLayouts()! {
             let item = NSMenuItem(title: layout.localizedName!, action: #selector(selectLayout(_:)), keyEquivalent: "")
@@ -57,8 +63,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
 
-        statusItem.menu = menu
-
         let id = current!.inputSourceID!
         let title = shortNames[id] ?? String(id.dropFirst(id.lastIndex(of: ".")!.utf16Offset(in: id) + 1))
         statusItem.button!.attributedTitle = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: 8, weight: .semibold)])
@@ -68,5 +72,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let layout = sender.representedObject as! WLKeyboardSource
         kb.selectLayout(withID: layout.inputSourceID)
         render()
+    }
+
+    func selectNextLayout() {
+        let currentId = kb.currentKeyboardLayout()!.inputSourceID
+        let layouts = kb.enabledLayouts()!
+        let idx = layouts.firstIndex { (source) -> Bool in
+            source.inputSourceID == currentId
+        }!
+        let next = layouts[(idx + 1) % layouts.count]
+        kb.selectLayout(withID: next.inputSourceID)
     }
 }
