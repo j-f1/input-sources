@@ -28,9 +28,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(render), name: NSTextInputContext.keyboardSelectionDidChangeNotification, object: nil)
 
         hotKey.keyUpHandler = {
-            let current = self.kb.currentKeyboardLayout()!
+            let currentId = self.kb.currentKeyboardLayout()!.inputSourceID
             let layouts = self.kb.enabledLayouts()!
-            let next = layouts[(layouts.firstIndex(of: current)! + 1) % layouts.count]
+            let idx = layouts.firstIndex { (source) -> Bool in
+                source.inputSourceID == currentId
+            }!
+            let next = layouts[(idx + 1) % layouts.count]
             self.kb.selectLayout(withID: next.inputSourceID)
         }
     }
