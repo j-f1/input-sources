@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85616BD923A93D06008C3348 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85616BD823A93D06008C3348 /* LaunchAtLogin.framework */; };
+		85616BDA23A93D06008C3348 /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85616BD823A93D06008C3348 /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85616BDE23A93EE0008C3348 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 85616BDD23A93EE0008C3348 /* Defaults */; };
+		85616BE023A94023008C3348 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BDF23A94023008C3348 /* Defaults.swift */; };
 		858D172E23A933E400008A4D /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858D172D23A933E400008A4D /* AboutViewController.xib */; };
 		858EE01623A887C0009822B5 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EE01523A887C0009822B5 /* Preferences.swift */; };
 		858EE01923A92F0F009822B5 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 858EE01823A92F0F009822B5 /* Preferences */; };
@@ -19,7 +23,23 @@
 		85CD64BA23A814B30008C06E /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 85CD64B923A814B30008C06E /* HotKey */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		85616BDB23A93D06008C3348 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				85616BDA23A93D06008C3348 /* LaunchAtLogin.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		85616BD823A93D06008C3348 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
+		85616BDF23A94023008C3348 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		858D172D23A933E400008A4D /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		858EE01523A887C0009822B5 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		858EE01A23A93267009822B5 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -43,8 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85616BDE23A93EE0008C3348 /* Defaults in Frameworks */,
 				85CD64BA23A814B30008C06E /* HotKey in Frameworks */,
 				858EE01923A92F0F009822B5 /* Preferences in Frameworks */,
+				85616BD923A93D06008C3348 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +96,7 @@
 				85CD64B423A808F00008C06E /* Main.storyboard */,
 				858D172D23A933E400008A4D /* AboutViewController.xib */,
 				85CD649123A7F85B0008C06E /* AppDelegate.swift */,
+				85616BDF23A94023008C3348 /* Defaults.swift */,
 				858EE01523A887C0009822B5 /* Preferences.swift */,
 				858EE01A23A93267009822B5 /* SettingsViewController.xib */,
 				85CD64AB23A7FE100008C06E /* keyboardSwitcher */,
@@ -89,6 +112,7 @@
 		85CD64A323A7FCE30008C06E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85616BD823A93D06008C3348 /* LaunchAtLogin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,6 +140,7 @@
 				85CD648A23A7F85B0008C06E /* Sources */,
 				85CD648B23A7F85B0008C06E /* Frameworks */,
 				85CD648C23A7F85B0008C06E /* Resources */,
+				85616BDB23A93D06008C3348 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +150,7 @@
 			packageProductDependencies = (
 				85CD64B923A814B30008C06E /* HotKey */,
 				858EE01823A92F0F009822B5 /* Preferences */,
+				85616BDD23A93EE0008C3348 /* Defaults */,
 			);
 			productName = "Input Sources";
 			productReference = 85CD648E23A7F85B0008C06E /* Input Sources.app */;
@@ -157,6 +183,7 @@
 			packageReferences = (
 				85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */,
 				858EE01723A92F0F009822B5 /* XCRemoteSwiftPackageReference "Preferences" */,
+				85616BDC23A93EE0008C3348 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 85CD648F23A7F85B0008C06E /* Products */;
 			projectDirPath = "";
@@ -188,6 +215,7 @@
 			files = (
 				85CD64B323A7FE440008C06E /* WLKeyboardManager.m in Sources */,
 				85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */,
+				85616BE023A94023008C3348 /* Defaults.swift in Sources */,
 				858EE01623A887C0009822B5 /* Preferences.swift in Sources */,
 				85CD64B223A7FE440008C06E /* WLKeyboardSource.m in Sources */,
 			);
@@ -318,6 +346,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 288H3WAR3W;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "input-sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -339,6 +371,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 288H3WAR3W;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "input-sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,6 +411,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		85616BDC23A93EE0008C3348 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
 		858EE01723A92F0F009822B5 /* XCRemoteSwiftPackageReference "Preferences" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Preferences";
@@ -394,6 +438,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		85616BDD23A93EE0008C3348 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85616BDC23A93EE0008C3348 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
 		858EE01823A92F0F009822B5 /* Preferences */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 858EE01723A92F0F009822B5 /* XCRemoteSwiftPackageReference "Preferences" */;

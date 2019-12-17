@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Defaults
 import HotKey
 import Preferences
 
@@ -20,36 +21,56 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let kb = WLKeyboardManager.shared()!
     let hotKey = HotKey(key: .space, modifiers: [.control])
     let menu = NSMenu()
+    var justOpened = true
 
     lazy var preferencesWindowController = PreferencesWindowController(
         preferencePanes: [
             SettingsViewController(),
-            AboutViewController()
+            AboutViewController(),
         ]
     )
     @IBAction func showPrefs(_: Any) {
         preferencesWindowController.show()
     }
-    
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+    func applicationDidFinishLaunching(_: Notification) {
         statusItem.behavior = [.terminationOnRemoval]
         if let btn = statusItem.button {
-            btn.image = #imageLiteral(resourceName: "AppIconTemplate")
             btn.imagePosition = .imageOverlaps
             btn.target = self
             btn.action = #selector(onclick)
             btn.sendAction(on: [.rightMouseUp, .leftMouseUp])
         }
 
-        render()
+        Defaults.observe(.showMenuBG, options: [.initial], handler: { _ in self.render() })
+            .tieToLifetime(of: self)
         NotificationCenter.default.addObserver(self, selector: #selector(render), name: NSTextInputContext.keyboardSelectionDidChangeNotification, object: nil)
 
         hotKey.keyUpHandler = selectNextLayout
+
+        NSApp.setActivationPolicy(Defaults[.showInDock] ? .regular : .accessory)
+        Defaults.observe(.showInDock, options: [.old, .new]) { [unowned self] change in
+            NSApp.setActivationPolicy(Defaults[.showInDock] ? .regular : .accessory)
+            if change.oldValue && !change.newValue {
+                self.preferencesWindowController.show()
+            }
+        }.tieToLifetime(of: self)
+    }
+    
+    func applicationDidBecomeActive(_: Notification) {
+        if justOpened {
+            justOpened = false
+        } else {
+            preferencesWindowController.show()
+        }
     }
 
     @objc func onclick() {
         let event = NSApplication.shared.currentEvent!
-        if event.type == .leftMouseUp && !event.modifierFlags.contains(.control) && !event.modifierFlags.contains(.option) {
+        if Defaults[.clickToCycle]
+            && event.type == .leftMouseUp
+            && !event.modifierFlags.contains(.control)
+            && !event.modifierFlags.contains(.option) {
             selectNextLayout()
             render()
         } else {
@@ -72,11 +93,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Preferences…", action: #selector(showPrefs), keyEquivalent: ","))
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "q"))
 
         let id = current!.inputSourceID!
         let title = shortNames[id] ?? String(id.dropFirst(id.lastIndex(of: ".")!.utf16Offset(in: id) + 1))
-        statusItem.button!.attributedTitle = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: 8, weight: .semibold)])
+        if let btn = statusItem.button {
+            if Defaults[.showMenuBG] {
+                btn.image = #imageLiteral(resourceName: "AppIconTemplate")
+                btn.attributedTitle = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: 8, weight: .semibold)])
+            } else {
+                btn.image = nil
+                btn.title = title
+            }
+        }
     }
 
     @objc func selectLayout(_ sender: NSMenuItem) {
