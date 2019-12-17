@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Input Sources" id="bar-Na-rxX">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Input Sources" id="C9D-YG-zva">
+                                    <items>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="mbD-Oi-zcp">
+                                            <connections>
+                                                <action selector="showPrefs:" target="Voe-Tx-rLC" id="ZfZ-os-MPn"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="NDO-YM-M5L"/>
+                                        <menuItem title="Services" id="JI2-lD-O2g">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="bIR-t4-UZ4"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="WBX-VM-65a"/>
+                                        <menuItem title="Quit Input Sources" keyEquivalent="q" id="kfo-BA-Zv8">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="tYZ-Wg-RcO"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Input_Sources" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="-214"/>
+        </scene>
+    </scenes>
+</document>

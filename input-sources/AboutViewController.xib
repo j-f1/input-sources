@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AboutViewController" customModule="Input_Sources" customModuleProvider="target">
+            <connections>
+                <outlet property="appNameField" destination="P4A-86-Bjz" id="dRQ-7n-bXE"/>
+                <outlet property="copyrightField" destination="eMY-tT-zJQ" id="cJH-9U-mDU"/>
+                <outlet property="versionField" destination="uN1-JJ-2kI" id="Q2d-HN-24q"/>
+                <outlet property="view" destination="Xtk-QZ-XIZ" id="Pm1-6u-7xD"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view id="Xtk-QZ-XIZ">
+            <rect key="frame" x="0.0" y="0.0" width="221" height="252"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mh3-hT-tMW">
+                    <rect key="frame" x="86" y="172" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="mh3-hT-tMW" secondAttribute="height" multiplier="1:1" id="aqm-0n-dZD"/>
+                        <constraint firstAttribute="width" constant="50" id="bSj-8c-OLY"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="App Icon" id="aiH-qi-PBF"/>
+                </imageView>
+                <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="P4A-86-Bjz">
+                    <rect key="frame" x="62" y="131" width="98" height="21"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="App Name" id="PU0-US-t2i">
+                        <font key="font" metaFont="systemBold" size="18"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="uN1-JJ-2kI">
+                    <rect key="frame" x="55" y="99" width="111" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" alignment="center" title="Version [version]" id="7bb-hP-cNv">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eMY-tT-zJQ">
+                    <rect key="frame" x="64" y="67" width="93" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" alignment="center" title="Copyright [...]" id="0hb-ou-S2C">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EcF-tP-E3g">
+                    <rect key="frame" x="78" y="23" width="66" height="32"/>
+                    <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I0R-2B-5YH">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="terminate:" target="-1" id="xJm-4j-zTY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P4A-86-Bjz" secondAttribute="trailing" constant="50" id="2G3-uO-LBE"/>
+                <constraint firstItem="eMY-tT-zJQ" firstAttribute="centerX" secondItem="Xtk-QZ-XIZ" secondAttribute="centerX" id="32S-pL-XF4"/>
+                <constraint firstItem="uN1-JJ-2kI" firstAttribute="top" secondItem="P4A-86-Bjz" secondAttribute="bottom" constant="16" id="4M4-bQ-6a0"/>
+                <constraint firstItem="mh3-hT-tMW" firstAttribute="centerX" secondItem="Xtk-QZ-XIZ" secondAttribute="centerX" id="5eT-Uk-suP"/>
+                <constraint firstItem="eMY-tT-zJQ" firstAttribute="top" secondItem="uN1-JJ-2kI" secondAttribute="bottom" constant="16" id="9ow-I1-RpX"/>
+                <constraint firstItem="P4A-86-Bjz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xtk-QZ-XIZ" secondAttribute="leading" constant="50" id="A5c-Ph-TYF"/>
+                <constraint firstItem="mh3-hT-tMW" firstAttribute="top" secondItem="Xtk-QZ-XIZ" secondAttribute="top" constant="30" id="BUr-xo-lbe"/>
+                <constraint firstAttribute="bottom" secondItem="EcF-tP-E3g" secondAttribute="bottom" constant="30" id="CDg-RR-xi0"/>
+                <constraint firstItem="mh3-hT-tMW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xtk-QZ-XIZ" secondAttribute="leading" constant="50" id="KtG-PL-IZh"/>
+                <constraint firstItem="P4A-86-Bjz" firstAttribute="top" secondItem="mh3-hT-tMW" secondAttribute="bottom" constant="20" id="UIo-vW-Vsc"/>
+                <constraint firstItem="uN1-JJ-2kI" firstAttribute="centerX" secondItem="Xtk-QZ-XIZ" secondAttribute="centerX" id="YIc-4q-9NF"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eMY-tT-zJQ" secondAttribute="trailing" constant="50" id="Yet-Qm-pWl"/>
+                <constraint firstItem="EcF-tP-E3g" firstAttribute="centerX" secondItem="Xtk-QZ-XIZ" secondAttribute="centerX" id="c6b-qL-cTM"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uN1-JJ-2kI" secondAttribute="trailing" constant="50" id="epY-QF-EXe"/>
+                <constraint firstItem="EcF-tP-E3g" firstAttribute="top" secondItem="eMY-tT-zJQ" secondAttribute="bottom" constant="16" id="j9b-Ox-XRC"/>
+                <constraint firstItem="P4A-86-Bjz" firstAttribute="centerX" secondItem="Xtk-QZ-XIZ" secondAttribute="centerX" id="nVR-XM-NPs"/>
+                <constraint firstItem="uN1-JJ-2kI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xtk-QZ-XIZ" secondAttribute="leading" constant="50" id="og4-7n-N2y"/>
+                <constraint firstItem="eMY-tT-zJQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xtk-QZ-XIZ" secondAttribute="leading" constant="50" id="pPI-a0-orP"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mh3-hT-tMW" secondAttribute="trailing" constant="50" id="x2R-oF-9dc"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="App Icon" width="128" height="128"/>
+    </resources>
+</document>

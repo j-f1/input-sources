@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SettingsViewController" customModule="Input_Sources" customModuleProvider="target">
+            <connections>
+                <outlet property="clickToCycleCheckbox" destination="lja-HQ-C9n" id="VJQ-Zt-rEZ"/>
+                <outlet property="openAtLoginCheckbox" destination="LCd-cd-sh4" id="FOd-rI-Mhf"/>
+                <outlet property="shortcutField" destination="3pk-xD-Dx0" id="lHo-2r-lzW"/>
+                <outlet property="showInDockCheckbox" destination="FZf-pq-uGQ" id="679-il-Q0q"/>
+                <outlet property="showMenuBGCheckbox" destination="UoF-k0-23q" id="KWi-SL-y2N"/>
+                <outlet property="view" destination="Q8t-dD-w5W" id="ga8-ab-YLU"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view id="Q8t-dD-w5W">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="327"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6n-kF-Mjz">
+                    <rect key="frame" x="106" y="20" width="374" height="287"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWg-4m-F3D">
+                            <rect key="frame" x="0.0" y="251" width="219" height="36"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LCd-cd-sh4">
+                                    <rect key="frame" x="-2" y="20" width="195" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Open Input Sources at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="v4c-tu-gQq">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="openAtLoginChanged:" target="-2" id="smY-ja-wvV"/>
+                                    </connections>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6V2-HS-Muc">
+                                    <rect key="frame" x="-2" y="0.0" width="223" height="14"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Open Input Sources automatically at login" id="JHs-k1-qAF">
+                                        <font key="font" metaFont="menu" size="11"/>
+                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTb-u8-PIx">
+                            <rect key="frame" x="0.0" y="185" width="374" height="50"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FZf-pq-uGQ">
+                                    <rect key="frame" x="-2" y="34" width="105" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Show in Dock" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Pnq-30-h7W">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="showInDockChanged:" target="-2" id="fUr-sn-smb"/>
+                                    </connections>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Kxh-A2-EiH">
+                                    <rect key="frame" x="-2" y="0.0" width="378" height="28"/>
+                                    <textFieldCell key="cell" title="Hiding the Input Sources icon from the Dock means you’ll need to quit it using its menu in the menu bar" id="JBx-I3-scN">
+                                        <font key="font" metaFont="menu" size="11"/>
+                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALQ-Yb-Dsx">
+                            <rect key="frame" x="0.0" y="119" width="374" height="50"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UoF-k0-23q">
+                                    <rect key="frame" x="-2" y="34" width="206" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Show background in menu bar" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oQi-R3-9IR">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="showMenuBGChanged:" target="-2" id="582-GN-YzQ"/>
+                                    </connections>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="wTV-l3-ql2">
+                                    <rect key="frame" x="-2" y="0.0" width="378" height="28"/>
+                                    <textFieldCell key="cell" title="By default, the current input method is displayed in a box in the menu bar. You can disable that here." id="9Q6-ep-b1B">
+                                        <font key="font" metaFont="menu" size="11"/>
+                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-rO-FMv">
+                            <rect key="frame" x="0.0" y="53" width="374" height="50"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lja-HQ-C9n">
+                                    <rect key="frame" x="-2" y="34" width="144" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Click to cycle inputs" bezelStyle="regularSquare" imagePosition="left" inset="2" id="2Ly-Sb-1Zd">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="clickToCycleChanged:" target="-2" id="y1T-6w-X6L"/>
+                                    </connections>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="bEt-fq-US9">
+                                    <rect key="frame" x="-2" y="0.0" width="378" height="28"/>
+                                    <textFieldCell key="cell" title="When this is enabled, right-click or option-click the menu bar item to open the menu." id="xwy-sN-L9t">
+                                        <font key="font" metaFont="menu" size="11"/>
+                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btw-Ly-4L0">
+                            <rect key="frame" x="0.0" y="0.0" width="269" height="37"/>
+                            <subviews>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="wHF-oH-FFi">
+                                    <rect key="frame" x="0.0" y="15" width="185" height="22"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="751" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pk-xD-Dx0" customClass="ShortcutField" customModule="Input_Sources" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="auf-fA-305"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" title="⌃space" usesSingleLineMode="YES" bezelStyle="round" id="n8A-Rw-Jim">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button horizontalHuggingPriority="751" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pf2-lG-GzF">
+                                            <rect key="frame" x="102" y="-7" width="89" height="33"/>
+                                            <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="Jmw-uy-xXw">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="deleteShortcut:" target="-2" id="4tc-YQ-57N"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Pf2-lG-GzF" firstAttribute="width" relation="lessThanOrEqual" secondItem="3pk-xD-Dx0" secondAttribute="width" id="HPg-Tb-Tgu"/>
+                                        <constraint firstAttribute="bottom" secondItem="3pk-xD-Dx0" secondAttribute="bottom" id="Hdu-ID-twe"/>
+                                        <constraint firstItem="3pk-xD-Dx0" firstAttribute="leading" secondItem="wHF-oH-FFi" secondAttribute="leading" id="afY-xT-LSb"/>
+                                        <constraint firstItem="Pf2-lG-GzF" firstAttribute="leading" secondItem="3pk-xD-Dx0" secondAttribute="trailing" constant="8" symbolic="YES" id="cFx-eI-WYc"/>
+                                        <constraint firstAttribute="trailing" secondItem="Pf2-lG-GzF" secondAttribute="trailing" id="i8x-Eu-tdw"/>
+                                        <constraint firstAttribute="bottom" secondItem="Pf2-lG-GzF" secondAttribute="bottom" id="uFi-nV-76S"/>
+                                        <constraint firstItem="Pf2-lG-GzF" firstAttribute="top" secondItem="wHF-oH-FFi" secondAttribute="top" id="wWH-Pk-m33"/>
+                                        <constraint firstItem="3pk-xD-Dx0" firstAttribute="top" secondItem="wHF-oH-FFi" secondAttribute="top" id="ymr-j1-TYl"/>
+                                    </constraints>
+                                </customView>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1WJ-4h-rU5">
+                                    <rect key="frame" x="-2" y="0.0" width="273" height="14"/>
+                                    <textFieldCell key="cell" title="Use this shortcut to switch to the next input source" id="3XG-In-EWH">
+                                        <font key="font" metaFont="menu" size="11"/>
+                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oWZ-Wx-Jlk">
+                    <rect key="frame" x="46" y="292" width="54" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Startup" id="lla-ha-VTg">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2oF-PY-iT2">
+                    <rect key="frame" x="18" y="240" width="82" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Appearance" id="Snl-pu-gFK">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ABu-lO-dXo">
+                    <rect key="frame" x="39" y="38" width="61" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Shortcut" id="kd1-ov-rA0">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ABu-lO-dXo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q8t-dD-w5W" secondAttribute="leading" constant="20" symbolic="YES" id="3TY-VF-HG1"/>
+                <constraint firstItem="2oF-PY-iT2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q8t-dD-w5W" secondAttribute="leading" constant="20" symbolic="YES" id="3yH-8b-XdS"/>
+                <constraint firstItem="L6n-kF-Mjz" firstAttribute="leading" secondItem="2oF-PY-iT2" secondAttribute="trailing" constant="8" symbolic="YES" id="4b8-o5-gHK"/>
+                <constraint firstItem="L6n-kF-Mjz" firstAttribute="leading" secondItem="ABu-lO-dXo" secondAttribute="trailing" constant="8" symbolic="YES" id="MDT-eo-QRC"/>
+                <constraint firstAttribute="trailing" secondItem="L6n-kF-Mjz" secondAttribute="trailing" constant="20" symbolic="YES" id="XQE-If-WfI"/>
+                <constraint firstItem="oWZ-Wx-Jlk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q8t-dD-w5W" secondAttribute="leading" constant="20" symbolic="YES" id="XUn-wF-6mB"/>
+                <constraint firstAttribute="bottom" secondItem="L6n-kF-Mjz" secondAttribute="bottom" constant="20" symbolic="YES" id="Ypy-FF-5m0"/>
+                <constraint firstItem="2oF-PY-iT2" firstAttribute="firstBaseline" secondItem="FZf-pq-uGQ" secondAttribute="firstBaseline" id="eV6-DD-3hT"/>
+                <constraint firstItem="L6n-kF-Mjz" firstAttribute="top" secondItem="Q8t-dD-w5W" secondAttribute="top" constant="20" symbolic="YES" id="j2z-fU-RD5"/>
+                <constraint firstItem="L6n-kF-Mjz" firstAttribute="leading" secondItem="oWZ-Wx-Jlk" secondAttribute="trailing" constant="8" id="ns5-Gb-2NB"/>
+                <constraint firstItem="LCd-cd-sh4" firstAttribute="firstBaseline" secondItem="oWZ-Wx-Jlk" secondAttribute="firstBaseline" id="tsc-Uf-rT3"/>
+                <constraint firstItem="ABu-lO-dXo" firstAttribute="firstBaseline" secondItem="3pk-xD-Dx0" secondAttribute="firstBaseline" id="urB-W7-TTl"/>
+            </constraints>
+            <point key="canvasLocation" x="-219" y="42"/>
+        </view>
+    </objects>
+</document>

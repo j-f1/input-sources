@@ -8,6 +8,7 @@
 
 import Cocoa
 import HotKey
+import Preferences
 
 let shortNames = [
     "com.apple.keylayout.UnicodeHexInput": "U+",
@@ -20,6 +21,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let hotKey = HotKey(key: .space, modifiers: [.control])
     let menu = NSMenu()
 
+    lazy var preferencesWindowController = PreferencesWindowController(
+        preferencePanes: [
+            SettingsViewController(),
+            AboutViewController()
+        ]
+    )
+    @IBAction func showPrefs(_: Any) {
+        preferencesWindowController.show()
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.behavior = [.terminationOnRemoval]
         if let btn = statusItem.button {
