@@ -7,10 +7,11 @@
 //
 
 import AppKit
-import Foundation
-import Preferences
-import LaunchAtLogin
 import Defaults
+import Foundation
+import LaunchAtLogin
+import Preferences
+import SwiftUI
 
 extension PreferencePane.Identifier {
     static let settings = Identifier("settings")
@@ -22,7 +23,7 @@ class SettingsViewController: NSViewController, PreferencePane {
     let preferencePaneTitle = "Settings"
     let toolbarItemIcon = NSImage(named: NSImage.preferencesGeneralName)!
     override var nibName: NSNib.Name { "SettingsViewController" }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         set(openAtLoginCheckbox, to: LaunchAtLogin.isEnabled)
@@ -30,10 +31,11 @@ class SettingsViewController: NSViewController, PreferencePane {
         set(showMenuBGCheckbox, to: Defaults[.showMenuBG])
         set(clickToCycleCheckbox, to: Defaults[.clickToCycle])
     }
-    
-    func set(_ checkbox: NSButton, to value: Bool) -> Void {
+
+    func set(_ checkbox: NSButton, to value: Bool) {
         checkbox.state = value ? .on : .off
     }
+
     func getValue(of checkbox: NSButton) -> Bool {
         checkbox.state == .on
     }
@@ -73,22 +75,8 @@ class ShortcutField: NSTextField {
 
 // MARK: -
 
-class AboutViewController: NSViewController, PreferencePane {
+class AboutViewController: NSHostingController<AboutView>, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.about
     let preferencePaneTitle = "About"
     let toolbarItemIcon = NSImage(named: NSImage.infoName)!
-    override var nibName: NSNib.Name { "AboutViewController" }
-
-    @IBOutlet var appNameField: NSTextField!
-    @IBOutlet var versionField: NSTextField!
-    @IBOutlet var copyrightField: NSTextField!
-    override func viewDidLoad() {
-        appNameField.stringValue = getString(for: "CFBundleName")
-        versionField.stringValue = "Version \(getString(for: "CFBundleShortVersionString")) (\(getString(for: "CFBundleVersion")))"
-        copyrightField.stringValue = getString(for: "NSHumanReadableCopyright")
-    }
-
-    func getString(for key: String) -> String {
-        Bundle.main.object(forInfoDictionaryKey: key) as! String
-    }
 }

@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var preferencesWindowController = PreferencesWindowController(
         preferencePanes: [
             SettingsViewController(),
-            AboutViewController(),
+            AboutViewController(rootView: AboutView()),
         ]
     )
     @IBAction func showPrefs(_: Any) {
