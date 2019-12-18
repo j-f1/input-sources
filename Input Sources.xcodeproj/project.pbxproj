@@ -13,7 +13,7 @@
 		85616BE023A94023008C3348 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BDF23A94023008C3348 /* Defaults.swift */; };
 		85616BE223A988B1008C3348 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BE123A988B1008C3348 /* AboutView.swift */; };
 		858EE01623A887C0009822B5 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EE01523A887C0009822B5 /* Preferences.swift */; };
-		858EE01923A92F0F009822B5 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 858EE01823A92F0F009822B5 /* Preferences */; };
+		858EE01923A92F0F009822B5 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 858EE01823A92F0F009822B5 /* Preferences */; settings = {ATTRIBUTES = (Required, ); }; };
 		858EE01B23A93267009822B5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EE01A23A93267009822B5 /* SettingsViewController.xib */; };
 		85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD649123A7F85B0008C06E /* AppDelegate.swift */; };
 		85CD649623A7F8600008C06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CD649523A7F8600008C06E /* Assets.xcassets */; };
@@ -211,7 +211,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		85616BE323A9E646008C3348 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -363,6 +363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "input-sources/Input_Sources.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
@@ -390,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "input-sources/Input_Sources.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
