@@ -27,7 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         preferencePanes: [
             SettingsViewController(),
             AboutViewController(rootView: AboutView()),
-        ]
+        ],
+        style: .segmentedControl
     )
     @IBAction func showPrefs(_: Any) {
         preferencesWindowController.show()
