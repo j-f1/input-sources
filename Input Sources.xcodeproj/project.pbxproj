@@ -38,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8559DA5723AAE1BE00F385ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		85616BD823A93D06008C3348 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		85616BDF23A94023008C3348 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		85616BE123A988B1008C3348 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		85CD648523A7F85B0008C06E = {
 			isa = PBXGroup;
 			children = (
+				8559DA5723AAE1BE00F385ED /* README.md */,
 				85CD649023A7F85B0008C06E /* Input Sources */,
 				85CD648F23A7F85B0008C06E /* Products */,
 				85CD64A323A7FCE30008C06E /* Frameworks */,
