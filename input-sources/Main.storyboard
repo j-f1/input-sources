@@ -33,6 +33,36 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Window" id="TTD-gt-4qj">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="wsw-Sy-zrP">
+                                    <items>
+                                        <menuItem title="Close" keyEquivalent="w" id="WIE-FF-MJY">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="Yjl-ra-iRc"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Bring All to Front" id="2ur-NR-qS5">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="MIu-eC-Rum"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="nAI-xG-5y8">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="g1a-zZ-dPr">
+                                    <items>
+                                        <menuItem title="Application Help" keyEquivalent="?" id="LOB-JJ-byJ">
+                                            <connections>
+                                                <action selector="showHelp:" target="Ady-hI-5gd" id="coO-kE-Rmr"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
