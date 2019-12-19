@@ -17,7 +17,7 @@ let shortNames = [
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let statusItem = NSStatusBar.system.statusItem(withLength: 25)
+    let statusItem = NSStatusBar.system.statusItem(withLength: Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength)
     let kb = WLKeyboardManager.shared()!
     let hotKey = HotKey(key: .space, modifiers: [.control])
     let menu = NSMenu()
@@ -83,6 +83,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func render() {
+        statusItem.length = Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength
         menu.removeAllItems()
         let current = kb.currentKeyboardLayout()
         for layout in kb.enabledLayouts()! {
