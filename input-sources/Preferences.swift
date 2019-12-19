@@ -59,7 +59,10 @@ class SettingsViewController: NSViewController, PreferencePane {
     @IBAction func clickToCycleChanged(_: NSButton) {
         Defaults[.clickToCycle] = getValue(of: clickToCycleCheckbox)
     }
-
+    @IBAction func openKeyboardSettings(_: NSButton) {
+        NSWorkspace.shared.openFile("/System/Library/PreferencePanes/Keyboard.prefPane")
+    }
+    
     @IBOutlet var shortcutField: NSTextField!
 
     @IBAction func deleteShortcut(_: NSButton) {
