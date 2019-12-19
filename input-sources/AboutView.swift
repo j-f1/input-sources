@@ -27,7 +27,8 @@ struct AboutView: View {
             }
         }
         .padding(.vertical, 30)
-        .padding(.horizontal, 50)
+        .padding(.horizontal, 16)
+        .frame(minWidth: 500)
     }
 
     func getString(for key: String) -> String {
