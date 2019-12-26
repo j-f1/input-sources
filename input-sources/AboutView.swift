@@ -2,11 +2,15 @@ import SwiftUI
 
 struct AboutView: View {
     private static let creditsURL = Bundle.main.url(forResource: "Credits", withExtension: "html")!
-    private static let credits = NSAttributedString(
-        html: try! Data(contentsOf: creditsURL),
-        baseURL: creditsURL,
-        documentAttributes: nil
-    )!
+    private static var credits: NSAttributedString {
+        let str = NSMutableAttributedString(
+            html: try! Data(contentsOf: creditsURL),
+            baseURL: creditsURL,
+            documentAttributes: nil
+        )!
+        str.addAttribute(.foregroundColor, value: NSColor.textColor, range: NSRange(location: 0, length: str.length))
+        return str
+    }
     var body: some View {
         VStack(alignment: HorizontalAlignment.center, spacing: 16) {
             Image(decorative: "App Icon")
