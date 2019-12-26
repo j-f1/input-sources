@@ -1,11 +1,3 @@
-//
-//  Defaults.swift
-//  Input Sources
-//
-//  Created by Jed Fox on 12/17/19.
-//  Copyright © 2019 Jed Fox. All rights reserved.
-//
-
 import Defaults
 
 extension Defaults.Keys {

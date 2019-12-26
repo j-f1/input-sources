@@ -33,7 +33,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6V2-HS-Muc">
                     <rect key="frame" x="108" y="255" width="374" height="14"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Open Input Sources automatically at login" id="JHs-k1-qAF">
-                        <font key="font" metaFont="label" size="11"/>
+                        <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -51,7 +51,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Kxh-A2-EiH">
                     <rect key="frame" x="108" y="189" width="374" height="28"/>
                     <textFieldCell key="cell" title="Hiding the Input Sources icon from the Dock means you’ll need to quit it using its menu in the menu bar" id="JBx-I3-scN">
-                        <font key="font" metaFont="label" size="11"/>
+                        <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -69,7 +69,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="wTV-l3-ql2">
                     <rect key="frame" x="108" y="123" width="374" height="28"/>
                     <textFieldCell key="cell" title="By default, the current input method is displayed in a box in the menu bar. You can disable the box here." id="9Q6-ep-b1B">
-                        <font key="font" metaFont="label" size="11"/>
+                        <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -87,7 +87,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="bEt-fq-US9">
                     <rect key="frame" x="108" y="57" width="374" height="28"/>
                     <textFieldCell key="cell" title="When this is enabled, right-click or option-click the menu bar item to open the menu." id="xwy-sN-L9t">
-                        <font key="font" metaFont="label" size="11"/>
+                        <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -167,7 +167,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1WJ-4h-rU5">
                     <rect key="frame" x="82" y="20" width="273" height="14"/>
                     <textFieldCell key="cell" title="Use this shortcut to switch to the next input source" id="3XG-In-EWH">
-                        <font key="font" metaFont="label" size="11"/>
+                        <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

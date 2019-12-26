@@ -1,17 +1,7 @@
-//
-//  PreferencesViewControllers.swift
-//  Input Sources
-//
-//  Created by Jed Fox on 12/16/19.
-//  Copyright © 2019 Jed Fox. All rights reserved.
-//
-
-import AppKit
+import SwiftUI
 import Defaults
-import Foundation
 import LaunchAtLogin
 import Preferences
-import SwiftUI
 
 extension PreferencePane.Identifier {
     static let settings = Identifier("settings")
