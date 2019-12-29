@@ -1,9 +1,5 @@
 //
-//  Input Sources-Bridging-Header.h
-//  Input Sources
-//
-//  Created by Jed Fox on 12/16/19.
-//  Copyright © 2019 Jed Fox. All rights reserved.
+//  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#include "keyboardSwitcher-Bridging-Header.h"
+#import "Utils.h"

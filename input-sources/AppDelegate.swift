@@ -10,7 +10,6 @@ let shortNames = [
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength)
-    let kb = WLKeyboardManager.shared()!
     let hotKey = HotKey(key: .space, modifiers: [.control])
     let menu = NSMenu()
     var justOpened = true
@@ -78,10 +77,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func render() {
         statusItem.length = Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength
         menu.removeAllItems()
-        let current = kb.currentKeyboardLayout()
-        for layout in kb.enabledLayouts()! {
-            let item = NSMenuItem(title: layout.localizedName!, action: #selector(selectLayout(_:)), keyEquivalent: "")
-            item.state = layout.inputSourceID == current?.inputSourceID ? .on : .off
+        let currentId = currentKeyboardLayout.id
+        for layout in enabledLayouts {
+            let item = NSMenuItem(title: layout.localizedName, action: #selector(selectLayout(_:)), keyEquivalent: "")
+            item.state = layout.id == currentId ? .on : .off
             item.representedObject = layout
             menu.addItem(item)
         }
@@ -90,8 +89,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "Preferences…", action: #selector(showPrefs), keyEquivalent: ","))
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "q"))
 
-        let id = current!.inputSourceID!
-        let title = shortNames[id] ?? String(id.dropFirst(id.lastIndex(of: ".")!.utf16Offset(in: id) + 1))
+        let title = shortNames[currentId] ?? String(currentId.dropFirst(currentId.lastIndex(of: ".")!.utf16Offset(in: currentId) + 1))
         if let btn = statusItem.button {
             if Defaults[.showMenuBG] {
                 btn.image = #imageLiteral(resourceName: "AppIconTemplate")
@@ -104,18 +102,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func selectLayout(_ sender: NSMenuItem) {
-        let layout = sender.representedObject as! WLKeyboardSource
-        kb.selectLayout(withID: layout.inputSourceID)
+        (sender.representedObject as! InputSource).activate()
         render()
     }
 
     func selectNextLayout() {
-        let currentId = kb.currentKeyboardLayout()!.inputSourceID
-        let layouts = kb.enabledLayouts()!
-        let idx = layouts.firstIndex { (source) -> Bool in
-            source.inputSourceID == currentId
-        }!
-        let next = layouts[(idx + 1) % layouts.count]
-        kb.selectLayout(withID: next.inputSourceID)
+        let idx = enabledLayouts.firstIndex(of: currentKeyboardLayout)!
+        enabledLayouts[(idx + 1) % enabledLayouts.count].activate()
     }
 }
