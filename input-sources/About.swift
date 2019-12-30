@@ -44,7 +44,7 @@ struct AboutView: View {
                 }
             }
         }
-        .padding(.bottom, 20)
+        .padding(.vertical, 20)
         .padding(.horizontal, 16)
     }
 }
@@ -53,9 +53,6 @@ struct ScrollableAttributedText: NSViewRepresentable {
     typealias NSViewType = NSScrollView
 
     let content: NSAttributedString
-    init(content: NSAttributedString) {
-        self.content = content
-    }
 
     func makeNSView(context: NSViewRepresentableContext<ScrollableAttributedText>) -> NSViewType {
         let scrollView = NSTextView.scrollableTextView()

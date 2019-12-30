@@ -1,12 +1,12 @@
 import Cocoa
 
 class TransientWindowController: NSWindowController, NSWindowDelegate {
-    func windowDidResignKey(_: Notification) {
-        window!.setIsVisible(false)
+    override func windowDidLoad() {
+        window?.center()
     }
     func open() {
         NSApp.activate(ignoringOtherApps: true)
-        showWindow(self)
+        self.showWindow(nil)
         if !window!.isKeyWindow {
             window!.makeKey()
         }

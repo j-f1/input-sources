@@ -88,8 +88,8 @@
         <scene sceneID="PZs-MV-dgf">
             <objects>
                 <windowController storyboardIdentifier="AboutWC" id="4Tp-Gf-0RL" customClass="TransientWindowController" customModule="Input_Sources" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="KMW-0n-Dmd">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                    <window key="window" title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="KMW-0n-Dmd">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="300" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
                         <connections>
@@ -148,7 +148,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1h7-8s-tnz">
                                         <rect key="frame" x="108" y="255" width="374" height="14"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Open Input Sources automatically at login" id="YC0-Qm-vhh">
-                                            <font key="font" metaFont="label" size="11"/>
+                                            <font key="font" metaFont="toolTip"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -166,7 +166,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-fV-K7z">
                                         <rect key="frame" x="108" y="189" width="374" height="28"/>
                                         <textFieldCell key="cell" title="Hiding the Input Sources icon from the Dock means you’ll need to quit it using its menu in the menu bar" id="aq2-YO-NKe">
-                                            <font key="font" metaFont="label" size="11"/>
+                                            <font key="font" metaFont="toolTip"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -184,7 +184,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RQJ-5C-JZc">
                                         <rect key="frame" x="108" y="123" width="374" height="28"/>
                                         <textFieldCell key="cell" title="By default, the current input method is displayed in a box in the menu bar. You can disable the box here." id="MrB-Rw-Lau">
-                                            <font key="font" metaFont="label" size="11"/>
+                                            <font key="font" metaFont="toolTip"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -202,7 +202,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="awe-8M-kcn">
                                         <rect key="frame" x="108" y="57" width="374" height="28"/>
                                         <textFieldCell key="cell" title="When this is enabled, right-click or option-click the menu bar item to open the menu." id="Azd-Gf-B5j">
-                                            <font key="font" metaFont="label" size="11"/>
+                                            <font key="font" metaFont="toolTip"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
