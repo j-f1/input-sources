@@ -147,8 +147,8 @@
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1h7-8s-tnz">
                                         <rect key="frame" x="108" y="255" width="374" height="14"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Open Input Sources automatically at login" id="YC0-Qm-vhh">
                                             <font key="font" metaFont="toolTip"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Open Input Sources automatically at login." id="YC0-Qm-vhh">
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -165,8 +165,8 @@
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-fV-K7z">
                                         <rect key="frame" x="108" y="189" width="374" height="28"/>
-                                        <textFieldCell key="cell" title="Hiding the Input Sources icon from the Dock means you’ll need to quit it using its menu in the menu bar" id="aq2-YO-NKe">
                                             <font key="font" metaFont="toolTip"/>
+                                        <textFieldCell key="cell" title="Hiding the Input Sources icon from the Dock means you’ll need to quit it using its menu in the menu bar." id="aq2-YO-NKe">
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
