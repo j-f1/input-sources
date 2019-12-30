@@ -42,10 +42,3 @@ class SettingsViewController: NSViewController {
         NSWorkspace.shared.openFile("/System/Library/PreferencePanes/Keyboard.prefPane")
     }
 }
-
-class ShortcutField: NSTextField {
-    override func performKeyEquivalent(with event: NSEvent) -> Bool {
-        print(event)
-        return true
-    }
-}
