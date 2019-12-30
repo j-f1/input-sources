@@ -16,7 +16,6 @@
 		858EE01923A92F0F009822B5 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 858EE01823A92F0F009822B5 /* Preferences */; settings = {ATTRIBUTES = (Required, ); }; };
 		858EE01B23A93267009822B5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EE01A23A93267009822B5 /* SettingsViewController.xib */; };
 		859EE5A923B8F988000175D0 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859EE5A823B8F988000175D0 /* InputSource.swift */; };
-		859EE5AC23B9159C000175D0 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EE5AB23B9159C000175D0 /* Utils.m */; };
 		85B905DA23B44451002932FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 85B905D923B44451002932FD /* Credits.html */; };
 		85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD649123A7F85B0008C06E /* AppDelegate.swift */; };
 		85CD649623A7F8600008C06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CD649523A7F8600008C06E /* Assets.xcassets */; };
@@ -46,9 +45,6 @@
 		858EE01523A887C0009822B5 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		858EE01A23A93267009822B5 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		859EE5A823B8F988000175D0 /* InputSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
-		859EE5AA23B9159B000175D0 /* Input Sources-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Input Sources-Bridging-Header.h"; sourceTree = "<group>"; };
-		859EE5AB23B9159C000175D0 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		859EE5AD23B91627000175D0 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		85B905D923B44451002932FD /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = SOURCE_ROOT; };
 		85CD648E23A7F85B0008C06E /* Input Sources.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Input Sources.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CD649123A7F85B0008C06E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,8 +90,6 @@
 		85CD649023A7F85B0008C06E /* Input Sources */ = {
 			isa = PBXGroup;
 			children = (
-				859EE5AB23B9159C000175D0 /* Utils.m */,
-				859EE5AD23B91627000175D0 /* Utils.h */,
 				85B905D923B44451002932FD /* Credits.html */,
 				85CD64B423A808F00008C06E /* Main.storyboard */,
 				85CD649123A7F85B0008C06E /* AppDelegate.swift */,
@@ -107,7 +101,6 @@
 				85CD649523A7F8600008C06E /* Assets.xcassets */,
 				85CD649A23A7F8600008C06E /* Info.plist */,
 				85CD649B23A7F8600008C06E /* Input_Sources.entitlements */,
-				859EE5AA23B9159B000175D0 /* Input Sources-Bridging-Header.h */,
 			);
 			name = "Input Sources";
 			path = "input-sources";
@@ -229,7 +222,6 @@
 				85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */,
 				85616BE023A94023008C3348 /* Defaults.swift in Sources */,
 				85616BE223A988B1008C3348 /* AboutView.swift in Sources */,
-				859EE5AC23B9159C000175D0 /* Utils.m in Sources */,
 				858EE01623A887C0009822B5 /* Preferences.swift in Sources */,
 				859EE5A923B8F988000175D0 /* InputSource.swift in Sources */,
 			);
@@ -376,7 +368,6 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "us.twopointzero.Input-Sources";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "input-sources/Input Sources-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -407,7 +398,6 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "us.twopointzero.Input-Sources";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "input-sources/Input Sources-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
