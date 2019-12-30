@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Defaults.observe(.showInDock, options: [.old, .new]) { [unowned self] change in
             NSApp.setActivationPolicy(Defaults[.showInDock] ? .regular : .accessory)
             if change.oldValue && !change.newValue {
-                self.settingsWC.showWindow(self)
+                self.settingsWC.open()
             }
         }.tieToLifetime(of: self)
     }
