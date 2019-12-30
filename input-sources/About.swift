@@ -1,23 +1,37 @@
 import SwiftUI
 
-struct AboutView: View {
-    private static let creditsURL = Bundle.main.url(forResource: "Credits", withExtension: "html")!
-    private static var credits: NSAttributedString {
-        let str = NSMutableAttributedString(
+class AboutViewController: NSHostingController<AboutView> {
+    required init?(coder: NSCoder) {
+        let creditsURL = Bundle.main.url(forResource: "Credits", withExtension: "html")!
+        let credits = NSMutableAttributedString(
             html: try! Data(contentsOf: creditsURL),
             baseURL: creditsURL,
             documentAttributes: nil
         )!
-        str.addAttribute(.foregroundColor, value: NSColor.textColor, range: NSRange(location: 0, length: str.length))
-        return str
+        credits.addAttribute(
+            .foregroundColor,
+            value: NSColor.textColor,
+            range: NSRange(location: 0, length: credits.length)
+        )
+
+        let rv = AboutView(credits: credits)
+        super.init(coder: coder, rootView: rv)
     }
+}
+
+func getString(for key: String) -> String {
+    Bundle.main.object(forInfoDictionaryKey: key) as! String
+}
+
+struct AboutView: View {
+    let credits: NSAttributedString
     var body: some View {
-        VStack(alignment: HorizontalAlignment.center, spacing: 16) {
+        VStack(alignment: .center, spacing: 16) {
             Image(decorative: "App Icon")
-            Text(getString(for: "CFBundleName")).font(Font.headline)
+            Text(getString(for: "CFBundleName")).font(.headline)
             Text("Version \(getString(for: "CFBundleShortVersionString")) (\(getString(for: "CFBundleVersion")))")
             Text(getString(for: "NSHumanReadableCopyright"))
-            ScrollableAttributedText(content: AboutView.credits)
+            ScrollableAttributedText(content: credits)
                 .frame(width: 350, height: 138)
             HStack {
                 Button(action: {
@@ -30,13 +44,8 @@ struct AboutView: View {
                 }
             }
         }
-        .padding(.vertical, 20)
+        .padding(.bottom, 20)
         .padding(.horizontal, 16)
-        .frame(minWidth: 500)
-    }
-
-    func getString(for key: String) -> String {
-        Bundle.main.object(forInfoDictionaryKey: key) as! String
     }
 }
 
@@ -67,6 +76,6 @@ struct ScrollableAttributedText: NSViewRepresentable {
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutView()
+        AboutView(credits: NSAttributedString(string: "hello"))
     }
 }

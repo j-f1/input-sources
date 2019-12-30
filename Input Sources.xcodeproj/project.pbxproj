@@ -11,16 +11,16 @@
 		85616BDA23A93D06008C3348 /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85616BD823A93D06008C3348 /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85616BDE23A93EE0008C3348 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 85616BDD23A93EE0008C3348 /* Defaults */; };
 		85616BE023A94023008C3348 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BDF23A94023008C3348 /* Defaults.swift */; };
-		85616BE223A988B1008C3348 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BE123A988B1008C3348 /* AboutView.swift */; };
-		858EE01623A887C0009822B5 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EE01523A887C0009822B5 /* Preferences.swift */; };
+		85616BE223A988B1008C3348 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BE123A988B1008C3348 /* About.swift */; };
+		858EE01623A887C0009822B5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EE01523A887C0009822B5 /* Settings.swift */; };
 		858EE01923A92F0F009822B5 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 858EE01823A92F0F009822B5 /* Preferences */; settings = {ATTRIBUTES = (Required, ); }; };
-		858EE01B23A93267009822B5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EE01A23A93267009822B5 /* SettingsViewController.xib */; };
 		859EE5A923B8F988000175D0 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859EE5A823B8F988000175D0 /* InputSource.swift */; };
 		85B905DA23B44451002932FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 85B905D923B44451002932FD /* Credits.html */; };
 		85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD649123A7F85B0008C06E /* AppDelegate.swift */; };
 		85CD649623A7F8600008C06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CD649523A7F8600008C06E /* Assets.xcassets */; };
 		85CD64B623A808F00008C06E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85CD64B423A808F00008C06E /* Main.storyboard */; };
 		85CD64BA23A814B30008C06E /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 85CD64B923A814B30008C06E /* HotKey */; };
+		85D1FC8E23B959F1005E954E /* TransientWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1FC8D23B959F1005E954E /* TransientWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,9 +41,8 @@
 		8559DA5723AAE1BE00F385ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		85616BD823A93D06008C3348 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		85616BDF23A94023008C3348 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		85616BE123A988B1008C3348 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		858EE01523A887C0009822B5 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
-		858EE01A23A93267009822B5 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		85616BE123A988B1008C3348 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		858EE01523A887C0009822B5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		859EE5A823B8F988000175D0 /* InputSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
 		85B905D923B44451002932FD /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = SOURCE_ROOT; };
 		85CD648E23A7F85B0008C06E /* Input Sources.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Input Sources.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +51,7 @@
 		85CD649A23A7F8600008C06E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85CD649B23A7F8600008C06E /* Input_Sources.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Input_Sources.entitlements; sourceTree = "<group>"; };
 		85CD64B423A808F00008C06E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		85D1FC8D23B959F1005E954E /* TransientWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransientWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +92,12 @@
 			children = (
 				85B905D923B44451002932FD /* Credits.html */,
 				85CD64B423A808F00008C06E /* Main.storyboard */,
+				85D1FC8D23B959F1005E954E /* TransientWindowController.swift */,
 				85CD649123A7F85B0008C06E /* AppDelegate.swift */,
 				85616BDF23A94023008C3348 /* Defaults.swift */,
-				858EE01523A887C0009822B5 /* Preferences.swift */,
-				85616BE123A988B1008C3348 /* AboutView.swift */,
+				858EE01523A887C0009822B5 /* Settings.swift */,
+				85616BE123A988B1008C3348 /* About.swift */,
 				859EE5A823B8F988000175D0 /* InputSource.swift */,
-				858EE01A23A93267009822B5 /* SettingsViewController.xib */,
 				85CD649523A7F8600008C06E /* Assets.xcassets */,
 				85CD649A23A7F8600008C06E /* Info.plist */,
 				85CD649B23A7F8600008C06E /* Input_Sources.entitlements */,
@@ -187,7 +187,6 @@
 			files = (
 				85CD649623A7F8600008C06E /* Assets.xcassets in Resources */,
 				85B905DA23B44451002932FD /* Credits.html in Resources */,
-				858EE01B23A93267009822B5 /* SettingsViewController.xib in Resources */,
 				85CD64B623A808F00008C06E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,8 +220,9 @@
 			files = (
 				85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */,
 				85616BE023A94023008C3348 /* Defaults.swift in Sources */,
-				85616BE223A988B1008C3348 /* AboutView.swift in Sources */,
-				858EE01623A887C0009822B5 /* Preferences.swift in Sources */,
+				85616BE223A988B1008C3348 /* About.swift in Sources */,
+				858EE01623A887C0009822B5 /* Settings.swift in Sources */,
+				85D1FC8E23B959F1005E954E /* TransientWindowController.swift in Sources */,
 				859EE5A923B8F988000175D0 /* InputSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

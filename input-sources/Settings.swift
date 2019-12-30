@@ -1,19 +1,8 @@
 import SwiftUI
 import Defaults
 import LaunchAtLogin
-import Preferences
 
-extension PreferencePane.Identifier {
-    static let settings = Identifier("settings")
-    static let about = Identifier("about")
-}
-
-class SettingsViewController: NSViewController, PreferencePane {
-    let preferencePaneIdentifier = PreferencePane.Identifier.settings
-    let preferencePaneTitle = "Settings"
-    let toolbarItemIcon = NSImage(named: NSImage.preferencesGeneralName)!
-    override var nibName: NSNib.Name { "SettingsViewController" }
-
+class SettingsViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         set(openAtLoginCheckbox, to: LaunchAtLogin.isEnabled)
@@ -52,11 +41,6 @@ class SettingsViewController: NSViewController, PreferencePane {
     @IBAction func openKeyboardSettings(_: NSButton) {
         NSWorkspace.shared.openFile("/System/Library/PreferencePanes/Keyboard.prefPane")
     }
-    
-    @IBOutlet var shortcutField: NSTextField!
-
-    @IBAction func deleteShortcut(_: NSButton) {
-    }
 }
 
 class ShortcutField: NSTextField {
@@ -64,12 +48,4 @@ class ShortcutField: NSTextField {
         print(event)
         return true
     }
-}
-
-// MARK: -
-
-class AboutViewController: NSHostingController<AboutView>, PreferencePane {
-    let preferencePaneIdentifier = PreferencePane.Identifier.about
-    let preferencePaneTitle = "About"
-    let toolbarItemIcon = NSImage(named: NSImage.infoName)!
 }

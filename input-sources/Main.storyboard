@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -74,6 +75,215 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="167" y="-214"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="uVo-Qx-BMM">
+            <objects>
+                <customObject id="0wO-f2-14v" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <hostingController showSeguePresentationStyle="single" id="gZU-Br-tEu" customClass="AboutViewController" customModule="Input_Sources" customModuleProvider="target" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="20"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="PZs-MV-dgf">
+            <objects>
+                <windowController storyboardIdentifier="AboutWC" id="4Tp-Gf-0RL" customClass="TransientWindowController" customModule="Input_Sources" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="KMW-0n-Dmd">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="300" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="4Tp-Gf-0RL" id="raB-Bu-LxL"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="gZU-Br-tEu" kind="relationship" relationship="window.shadowedContentViewController" id="hsR-5x-JCp"/>
+                    </connections>
+                </windowController>
+                <customObject id="Igj-fO-eW1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="20"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="k62-1A-V8f">
+            <objects>
+                <windowController storyboardIdentifier="SettingsWC" id="pqC-S2-6nA" customClass="TransientWindowController" customModule="Input_Sources" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="tLh-xU-rfI">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <rect key="contentRect" x="397" y="310" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="pqC-S2-6nA" id="KcP-JQ-r1w"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="KGH-0l-M97" kind="relationship" relationship="window.shadowedContentViewController" id="hqc-5l-QZI"/>
+                    </connections>
+                </windowController>
+                <customObject id="lHJ-xO-oLo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="383"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="hVb-Gl-KZn">
+            <objects>
+                <viewController id="KGH-0l-M97" customClass="SettingsViewController" customModule="Input_Sources" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="3Tb-LR-C9Y">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="311"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <view translatesAutoresizingMaskIntoConstraints="NO" id="aSU-yU-cVn">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="311"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tLh-H1-iUc">
+                                        <rect key="frame" x="108" y="275" width="195" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Open Input Sources at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="9Y8-Oh-joR">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openAtLoginChanged:" target="KGH-0l-M97" id="adF-Td-1cd"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1h7-8s-tnz">
+                                        <rect key="frame" x="108" y="255" width="374" height="14"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Open Input Sources automatically at login" id="YC0-Qm-vhh">
+                                            <font key="font" metaFont="label" size="11"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CQD-3X-aQ8">
+                                        <rect key="frame" x="108" y="223" width="105" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Show in Dock" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="rxS-Xr-WIG">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showInDockChanged:" target="KGH-0l-M97" id="2zl-eJ-Nbo"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-fV-K7z">
+                                        <rect key="frame" x="108" y="189" width="374" height="28"/>
+                                        <textFieldCell key="cell" title="Hiding the Input Sources icon from the Dock means you’ll need to quit it using its menu in the menu bar" id="aq2-YO-NKe">
+                                            <font key="font" metaFont="label" size="11"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CHn-T6-p4G">
+                                        <rect key="frame" x="108" y="157" width="206" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Show background in menu bar" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tGp-Ub-xY9">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showMenuBGChanged:" target="KGH-0l-M97" id="ho5-aH-H85"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RQJ-5C-JZc">
+                                        <rect key="frame" x="108" y="123" width="374" height="28"/>
+                                        <textFieldCell key="cell" title="By default, the current input method is displayed in a box in the menu bar. You can disable the box here." id="MrB-Rw-Lau">
+                                            <font key="font" metaFont="label" size="11"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="imD-M6-6qt">
+                                        <rect key="frame" x="108" y="91" width="144" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Click to cycle inputs" bezelStyle="regularSquare" imagePosition="left" inset="2" id="3oY-rN-au5">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickToCycleChanged:" target="KGH-0l-M97" id="346-ys-DP8"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="awe-8M-kcn">
+                                        <rect key="frame" x="108" y="57" width="374" height="28"/>
+                                        <textFieldCell key="cell" title="When this is enabled, right-click or option-click the menu bar item to open the menu." id="Azd-Gf-B5j">
+                                            <font key="font" metaFont="label" size="11"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5EK-F3-Qsx">
+                                        <rect key="frame" x="23" y="276" width="81" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Startup" id="S4b-ZY-q6K">
+                                            <font key="font" metaFont="systemSemibold" size="13"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BWx-Zp-Jn7">
+                                        <rect key="frame" x="23" y="224" width="81" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Appearance" id="Suz-oA-4iv">
+                                            <font key="font" metaFont="systemSemibold" size="13"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dog-z6-TJJ">
+                                        <rect key="frame" x="104" y="13" width="198" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Open Keyboard Settings…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oos-qA-sLK">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openKeyboardSettings:" target="KGH-0l-M97" id="mAW-2c-wFd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CQD-3X-aQ8" firstAttribute="leading" secondItem="BWx-Zp-Jn7" secondAttribute="trailing" constant="8" symbolic="YES" id="0YK-do-1ji"/>
+                                    <constraint firstItem="CQD-3X-aQ8" firstAttribute="top" secondItem="1h7-8s-tnz" secondAttribute="bottom" constant="16" id="2PU-61-sv6"/>
+                                    <constraint firstItem="dJn-fV-K7z" firstAttribute="top" secondItem="CQD-3X-aQ8" secondAttribute="bottom" constant="8" id="36W-FF-iJW"/>
+                                    <constraint firstItem="dJn-fV-K7z" firstAttribute="leading" secondItem="CQD-3X-aQ8" secondAttribute="leading" id="7SX-1J-igC"/>
+                                    <constraint firstItem="CHn-T6-p4G" firstAttribute="leading" secondItem="tLh-H1-iUc" secondAttribute="leading" id="ByF-Ht-cJ6"/>
+                                    <constraint firstItem="imD-M6-6qt" firstAttribute="top" secondItem="RQJ-5C-JZc" secondAttribute="bottom" constant="16" id="CNj-f0-KJL"/>
+                                    <constraint firstItem="BWx-Zp-Jn7" firstAttribute="leading" secondItem="aSU-yU-cVn" secondAttribute="leading" constant="25" id="Df7-dr-KgL"/>
+                                    <constraint firstItem="tLh-H1-iUc" firstAttribute="leading" secondItem="1h7-8s-tnz" secondAttribute="leading" id="Em2-yc-MKd"/>
+                                    <constraint firstItem="Dog-z6-TJJ" firstAttribute="leading" secondItem="tLh-H1-iUc" secondAttribute="leading" id="GEv-MD-sLb"/>
+                                    <constraint firstAttribute="width" constant="500" id="GtK-1t-rBY"/>
+                                    <constraint firstItem="1h7-8s-tnz" firstAttribute="top" secondItem="tLh-H1-iUc" secondAttribute="bottom" constant="8" symbolic="YES" id="InT-fl-FZg"/>
+                                    <constraint firstItem="tLh-H1-iUc" firstAttribute="firstBaseline" secondItem="5EK-F3-Qsx" secondAttribute="firstBaseline" id="PVn-DB-XoC"/>
+                                    <constraint firstItem="CQD-3X-aQ8" firstAttribute="leading" secondItem="tLh-H1-iUc" secondAttribute="leading" id="QIw-Ut-sWY"/>
+                                    <constraint firstItem="awe-8M-kcn" firstAttribute="top" secondItem="imD-M6-6qt" secondAttribute="bottom" constant="8" symbolic="YES" id="QoW-uV-Fi4"/>
+                                    <constraint firstItem="imD-M6-6qt" firstAttribute="leading" secondItem="tLh-H1-iUc" secondAttribute="leading" id="R9K-5P-95h"/>
+                                    <constraint firstAttribute="trailing" secondItem="RQJ-5C-JZc" secondAttribute="trailing" constant="20" symbolic="YES" id="Tt8-Km-H5T"/>
+                                    <constraint firstItem="awe-8M-kcn" firstAttribute="leading" secondItem="imD-M6-6qt" secondAttribute="leading" id="WJW-8k-xWY"/>
+                                    <constraint firstAttribute="trailing" secondItem="1h7-8s-tnz" secondAttribute="trailing" constant="20" symbolic="YES" id="a1J-9K-zns"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dog-z6-TJJ" secondAttribute="bottom" constant="20" symbolic="YES" id="daX-fy-bUK"/>
+                                    <constraint firstItem="5EK-F3-Qsx" firstAttribute="leading" secondItem="aSU-yU-cVn" secondAttribute="leading" constant="25" id="e8F-br-MEV"/>
+                                    <constraint firstItem="Dog-z6-TJJ" firstAttribute="top" secondItem="awe-8M-kcn" secondAttribute="bottom" constant="16" id="oSK-ex-eeK"/>
+                                    <constraint firstAttribute="trailing" secondItem="awe-8M-kcn" secondAttribute="trailing" constant="20" symbolic="YES" id="pus-uQ-LeA"/>
+                                    <constraint firstItem="tLh-H1-iUc" firstAttribute="leading" secondItem="5EK-F3-Qsx" secondAttribute="trailing" constant="8" symbolic="YES" id="rno-ED-ngE"/>
+                                    <constraint firstItem="BWx-Zp-Jn7" firstAttribute="firstBaseline" secondItem="CQD-3X-aQ8" secondAttribute="firstBaseline" id="sYv-2R-j1N"/>
+                                    <constraint firstItem="RQJ-5C-JZc" firstAttribute="top" secondItem="CHn-T6-p4G" secondAttribute="bottom" constant="8" symbolic="YES" id="vrE-uM-PBo"/>
+                                    <constraint firstItem="CHn-T6-p4G" firstAttribute="top" secondItem="dJn-fV-K7z" secondAttribute="bottom" constant="16" id="weP-nv-A7t"/>
+                                    <constraint firstItem="tLh-H1-iUc" firstAttribute="top" secondItem="aSU-yU-cVn" secondAttribute="top" constant="20" symbolic="YES" id="xQp-Hd-gI0"/>
+                                    <constraint firstAttribute="trailing" secondItem="dJn-fV-K7z" secondAttribute="trailing" constant="20" symbolic="YES" id="y9Y-2I-nYu"/>
+                                    <constraint firstItem="RQJ-5C-JZc" firstAttribute="leading" secondItem="CHn-T6-p4G" secondAttribute="leading" id="zZa-x8-8Sl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aSU-yU-cVn" firstAttribute="top" secondItem="3Tb-LR-C9Y" secondAttribute="top" id="3kX-ve-gAm"/>
+                            <constraint firstAttribute="bottom" secondItem="aSU-yU-cVn" secondAttribute="bottom" id="87B-rP-xAG"/>
+                            <constraint firstAttribute="trailing" secondItem="aSU-yU-cVn" secondAttribute="trailing" id="EGh-GB-q3h"/>
+                            <constraint firstItem="aSU-yU-cVn" firstAttribute="leading" secondItem="3Tb-LR-C9Y" secondAttribute="leading" id="wmG-xa-F4E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clickToCycleCheckbox" destination="imD-M6-6qt" id="8j5-ae-lEH"/>
+                        <outlet property="openAtLoginCheckbox" destination="tLh-H1-iUc" id="10c-6I-KI9"/>
+                        <outlet property="showInDockCheckbox" destination="CQD-3X-aQ8" id="JYF-ar-AD5"/>
+                        <outlet property="showMenuBGCheckbox" destination="CHn-T6-p4G" id="Pc0-nZ-jzb"/>
+                    </connections>
+                </viewController>
+                <customObject id="bcx-fb-1rd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792" y="384"/>
         </scene>
     </scenes>
 </document>

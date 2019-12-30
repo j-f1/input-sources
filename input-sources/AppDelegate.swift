@@ -13,16 +13,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let hotKey = HotKey(key: .space, modifiers: [.control])
     let menu = NSMenu()
     var justOpened = true
+    
+    lazy var aboutWC = NSStoryboard.main!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("AboutWC")) as! TransientWindowController
+    lazy var settingsWC = NSStoryboard.main!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("SettingsWC")) as! TransientWindowController
 
-    lazy var preferencesWindowController = PreferencesWindowController(
-        preferencePanes: [
-            SettingsViewController(),
-            AboutViewController(rootView: AboutView()),
-        ],
-        style: .segmentedControl
-    )
-    @IBAction func showPrefs(_: Any) {
-        preferencesWindowController.show()
+    @IBAction func showPrefs(_ sender: Any) {
+        settingsWC.open()
+    }
+    @IBAction func showAbout(_ sender: Any) {
+        aboutWC.open()
     }
 
     func applicationDidFinishLaunching(_: Notification) {
@@ -44,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Defaults.observe(.showInDock, options: [.old, .new]) { [unowned self] change in
             NSApp.setActivationPolicy(Defaults[.showInDock] ? .regular : .accessory)
             if change.oldValue && !change.newValue {
-                self.preferencesWindowController.show()
+                self.settingsWC.showWindow(self)
             }
         }.tieToLifetime(of: self)
     }
@@ -53,7 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if justOpened {
             justOpened = false
         } else {
-            preferencesWindowController.show()
+            settingsWC.showWindow(self)
         }
     }
 
@@ -87,6 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Preferences…", action: #selector(showPrefs), keyEquivalent: ","))
+        menu.addItem(NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "q"))
 
         let title = shortNames[currentId] ?? String(currentId.dropFirst(currentId.lastIndex(of: ".")!.utf16Offset(in: currentId) + 1))
