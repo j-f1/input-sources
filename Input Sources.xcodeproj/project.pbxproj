@@ -13,7 +13,6 @@
 		85616BE023A94023008C3348 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BDF23A94023008C3348 /* Defaults.swift */; };
 		85616BE223A988B1008C3348 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BE123A988B1008C3348 /* About.swift */; };
 		858EE01623A887C0009822B5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EE01523A887C0009822B5 /* Settings.swift */; };
-		858EE01923A92F0F009822B5 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 858EE01823A92F0F009822B5 /* Preferences */; settings = {ATTRIBUTES = (Required, ); }; };
 		859EE5A923B8F988000175D0 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859EE5A823B8F988000175D0 /* InputSource.swift */; };
 		85B905DA23B44451002932FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 85B905D923B44451002932FD /* Credits.html */; };
 		85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD649123A7F85B0008C06E /* AppDelegate.swift */; };
@@ -61,7 +60,6 @@
 			files = (
 				85616BDE23A93EE0008C3348 /* Defaults in Frameworks */,
 				85CD64BA23A814B30008C06E /* HotKey in Frameworks */,
-				858EE01923A92F0F009822B5 /* Preferences in Frameworks */,
 				85616BD923A93D06008C3348 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +132,6 @@
 			name = "Input Sources";
 			packageProductDependencies = (
 				85CD64B923A814B30008C06E /* HotKey */,
-				858EE01823A92F0F009822B5 /* Preferences */,
 				85616BDD23A93EE0008C3348 /* Defaults */,
 			);
 			productName = "Input Sources";
@@ -168,7 +165,6 @@
 			mainGroup = 85CD648523A7F85B0008C06E;
 			packageReferences = (
 				85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */,
-				858EE01723A92F0F009822B5 /* XCRemoteSwiftPackageReference "Preferences" */,
 				85616BDC23A93EE0008C3348 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 85CD648F23A7F85B0008C06E /* Products */;
@@ -434,14 +430,6 @@
 				minimumVersion = 3.1.1;
 			};
 		};
-		858EE01723A92F0F009822B5 /* XCRemoteSwiftPackageReference "Preferences" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/Preferences";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
-			};
-		};
 		85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/soffes/HotKey";
@@ -457,11 +445,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 85616BDC23A93EE0008C3348 /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
-		};
-		858EE01823A92F0F009822B5 /* Preferences */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 858EE01723A92F0F009822B5 /* XCRemoteSwiftPackageReference "Preferences" */;
-			productName = Preferences;
 		};
 		85CD64B923A814B30008C06E /* HotKey */ = {
 			isa = XCSwiftPackageProductDependency;
