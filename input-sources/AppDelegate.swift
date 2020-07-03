@@ -29,8 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let btn = statusItem.button {
             btn.imagePosition = .imageOverlaps
             btn.target = self
-            btn.action = #selector(onclick)
-            btn.sendAction(on: [.rightMouseUp, .leftMouseUp])
+            btn.action = #selector(onMouse)
+            btn.sendAction(on: [.rightMouseUp, .leftMouseUp, .rightMouseDown, .leftMouseDown])
         }
 
         Defaults.observe(.showMenuBG, options: [.initial], handler: { _ in self.render() })
@@ -56,12 +56,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    @objc func onclick() {
+    @objc func onMouse() {
         let event = NSApplication.shared.currentEvent!
-        if Defaults[.clickToCycle]
+        let shouldCycle = Defaults[.clickToCycle]
             && event.type == .leftMouseUp
             && !event.modifierFlags.contains(.control)
-            && !event.modifierFlags.contains(.option) {
+            && !event.modifierFlags.contains(.option)
+        if shouldCycle {
             selectNextLayout()
             render()
         } else {
