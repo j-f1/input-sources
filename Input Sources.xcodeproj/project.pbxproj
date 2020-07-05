@@ -12,8 +12,12 @@
 		85616BDE23A93EE0008C3348 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 85616BDD23A93EE0008C3348 /* Defaults */; };
 		85616BE023A94023008C3348 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BDF23A94023008C3348 /* Defaults.swift */; };
 		85616BE223A988B1008C3348 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BE123A988B1008C3348 /* About.swift */; };
-		858EE01623A887C0009822B5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EE01523A887C0009822B5 /* Settings.swift */; };
+		859B341E24AFD42B00A25824 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B341D24AFD42B00A25824 /* SettingsView.swift */; };
 		859EE5A923B8F988000175D0 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859EE5A823B8F988000175D0 /* InputSource.swift */; };
+		85B36F9D24AFDD4F004C89DC /* SettingsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B36F9C24AFDD4F004C89DC /* SettingsToggle.swift */; };
+		85B36F9F24AFDDB1004C89DC /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B36F9E24AFDDB1004C89DC /* SettingsSection.swift */; };
+		85B36FA124AFDFC6004C89DC /* SettingsHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B36FA024AFDFC6004C89DC /* SettingsHostingController.swift */; };
+		85B36FA424AFE3FC004C89DC /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 85B36FA324AFE3FC004C89DC /* Preferences */; };
 		85B905DA23B44451002932FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 85B905D923B44451002932FD /* Credits.html */; };
 		85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD649123A7F85B0008C06E /* AppDelegate.swift */; };
 		85CD649623A7F8600008C06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CD649523A7F8600008C06E /* Assets.xcassets */; };
@@ -41,8 +45,11 @@
 		85616BD823A93D06008C3348 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		85616BDF23A94023008C3348 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		85616BE123A988B1008C3348 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
-		858EE01523A887C0009822B5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		859B341D24AFD42B00A25824 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		859EE5A823B8F988000175D0 /* InputSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
+		85B36F9C24AFDD4F004C89DC /* SettingsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggle.swift; sourceTree = "<group>"; };
+		85B36F9E24AFDDB1004C89DC /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		85B36FA024AFDFC6004C89DC /* SettingsHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHostingController.swift; sourceTree = "<group>"; };
 		85B905D923B44451002932FD /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = SOURCE_ROOT; };
 		85CD648E23A7F85B0008C06E /* Input Sources.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Input Sources.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CD649123A7F85B0008C06E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +67,7 @@
 			files = (
 				85616BDE23A93EE0008C3348 /* Defaults in Frameworks */,
 				85CD64BA23A814B30008C06E /* HotKey in Frameworks */,
+				85B36FA424AFE3FC004C89DC /* Preferences in Frameworks */,
 				85616BD923A93D06008C3348 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +75,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85B36F9B24AFDD3E004C89DC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				859B341D24AFD42B00A25824 /* SettingsView.swift */,
+				85B36F9C24AFDD4F004C89DC /* SettingsToggle.swift */,
+				85B36F9E24AFDDB1004C89DC /* SettingsSection.swift */,
+				85B36FA024AFDFC6004C89DC /* SettingsHostingController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		85CD648523A7F85B0008C06E = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +112,7 @@
 				85D1FC8D23B959F1005E954E /* TransientWindowController.swift */,
 				85CD649123A7F85B0008C06E /* AppDelegate.swift */,
 				85616BDF23A94023008C3348 /* Defaults.swift */,
-				858EE01523A887C0009822B5 /* Settings.swift */,
+				85B36F9B24AFDD3E004C89DC /* Settings */,
 				85616BE123A988B1008C3348 /* About.swift */,
 				859EE5A823B8F988000175D0 /* InputSource.swift */,
 				85CD649523A7F8600008C06E /* Assets.xcassets */,
@@ -133,6 +152,7 @@
 			packageProductDependencies = (
 				85CD64B923A814B30008C06E /* HotKey */,
 				85616BDD23A93EE0008C3348 /* Defaults */,
+				85B36FA324AFE3FC004C89DC /* Preferences */,
 			);
 			productName = "Input Sources";
 			productReference = 85CD648E23A7F85B0008C06E /* Input Sources.app */;
@@ -166,6 +186,7 @@
 			packageReferences = (
 				85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */,
 				85616BDC23A93EE0008C3348 /* XCRemoteSwiftPackageReference "Defaults" */,
+				85B36FA224AFE3FC004C89DC /* XCRemoteSwiftPackageReference "Preferences" */,
 			);
 			productRefGroup = 85CD648F23A7F85B0008C06E /* Products */;
 			projectDirPath = "";
@@ -216,10 +237,13 @@
 			files = (
 				85CD649223A7F85B0008C06E /* AppDelegate.swift in Sources */,
 				85616BE023A94023008C3348 /* Defaults.swift in Sources */,
+				85B36F9D24AFDD4F004C89DC /* SettingsToggle.swift in Sources */,
+				85B36FA124AFDFC6004C89DC /* SettingsHostingController.swift in Sources */,
 				85616BE223A988B1008C3348 /* About.swift in Sources */,
-				858EE01623A887C0009822B5 /* Settings.swift in Sources */,
 				85D1FC8E23B959F1005E954E /* TransientWindowController.swift in Sources */,
+				85B36F9F24AFDDB1004C89DC /* SettingsSection.swift in Sources */,
 				859EE5A923B8F988000175D0 /* InputSource.swift in Sources */,
+				859B341E24AFD42B00A25824 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +454,14 @@
 				minimumVersion = 3.1.1;
 			};
 		};
+		85B36FA224AFE3FC004C89DC /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/soffes/HotKey";
@@ -447,6 +479,11 @@
 			productName = Defaults;
 		};
 		85CD64B923A814B30008C06E /* HotKey */ = {
+		85B36FA324AFE3FC004C89DC /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85B36FA224AFE3FC004C89DC /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
 			isa = XCSwiftPackageProductDependency;
 			package = 85CD64B823A814B30008C06E /* XCRemoteSwiftPackageReference "HotKey" */;
 			productName = HotKey;
