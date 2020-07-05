@@ -86,6 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Preferences…", action: #selector(showPrefs), keyEquivalent: ","))
         menu.addItem(NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Send Feedback…", action: #selector(sendFeedback), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "q"))
 
         let title = shortNames[currentId] ?? String(currentId.dropFirst(currentId.lastIndex(of: ".")!.utf16Offset(in: currentId) + 1))
@@ -98,6 +99,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 btn.title = title
             }
         }
+    }
+    
+    @objc func sendFeedback(_ sender: NSMenuItem) {
+        NSWorkspace.shared.open(URL(string: "https://github.com/j-f1/input-sources/issues/new")!)
     }
 
     @objc func selectLayout(_ sender: NSMenuItem) {
