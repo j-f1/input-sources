@@ -2,9 +2,7 @@ import Cocoa
 import Defaults
 import KeyboardShortcuts
 
-let shortNames = [
-    "com.apple.keylayout.UnicodeHexInput": "U+",
-]
+let shortNames = (try? String(contentsOf: Bundle.main.url(forResource: "codes", withExtension: "plist")!).propertyList() as? [String: String])
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -89,11 +87,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "Send Feedback…", action: #selector(sendFeedback), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "q"))
 
-        let title = shortNames[currentId] ?? String(currentId.dropFirst(currentId.lastIndex(of: ".")!.utf16Offset(in: currentId) + 1))
+        let name = String(currentId.dropFirst(currentId.lastIndex(of: ".")!.utf16Offset(in: currentId) + 1))
+//        print(name, shortNames!)
+        let title = shortNames![name] ?? name
         if let btn = statusItem.button {
             if Defaults[.showMenuBG] {
                 btn.image = #imageLiteral(resourceName: "AppIconTemplate")
-                btn.attributedTitle = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: 8, weight: .semibold)])
+                let size: CGFloat = title.count == 1 ? 13 : 8
+                btn.attributedTitle = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: size, weight: .semibold)])
             } else {
                 btn.image = nil
                 btn.title = title
