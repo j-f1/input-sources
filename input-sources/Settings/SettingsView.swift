@@ -9,6 +9,7 @@
 import SwiftUI
 import LaunchAtLogin
 import Defaults
+import KeyboardShortcuts
 import Preferences
 
 func title(_ text: String) -> () -> Text {
@@ -33,6 +34,12 @@ struct SettingsView: View {
                     description: "Open Input Sources automatically at login.",
                     value: self.launchAtLogin
                 )
+            }
+            Preferences.Section(label: title("Shortcut")) {
+                VStack(alignment: .leading) {
+                    KeyboardShortcuts.Recorder(for: .nextInputSource)
+                    Text("Switch to the next enabled input method (default: control+space)")
+                        .preferenceDescription()                }
             }
             Preferences.Section(label: title("Appearance")) {
                 SettingsToggle(

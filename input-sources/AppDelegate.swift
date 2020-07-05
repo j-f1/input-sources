@@ -1,7 +1,6 @@
 import Cocoa
 import Defaults
-import HotKey
-import Preferences
+import KeyboardShortcuts
 
 let shortNames = [
     "com.apple.keylayout.UnicodeHexInput": "U+",
@@ -10,7 +9,6 @@ let shortNames = [
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength)
-    let hotKey = HotKey(key: .space, modifiers: [.control])
     let menu = NSMenu()
     var justOpened = true
     
@@ -37,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .tieToLifetime(of: self)
         NotificationCenter.default.addObserver(self, selector: #selector(render), name: NSTextInputContext.keyboardSelectionDidChangeNotification, object: nil)
 
-        hotKey.keyUpHandler = selectNextLayout
+        KeyboardShortcuts.onKeyUp(for: .nextInputSource, action: selectNextLayout)
 
         NSApp.setActivationPolicy(Defaults[.showInDock] ? .regular : .accessory)
         Defaults.observe(.showInDock, options: [.old, .new]) { [unowned self] change in
