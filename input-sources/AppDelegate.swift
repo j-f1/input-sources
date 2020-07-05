@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         KeyboardShortcuts.onKeyUp(for: .nextInputSource, action: selectNextLayout)
 
         NSApp.setActivationPolicy(Defaults[.showInDock] ? .regular : .accessory)
-        Defaults.observe(.showInDock, options: [.old, .new]) { [unowned self] change in
+        Defaults.observe(.showInDock) { [unowned self] change in
             NSApp.setActivationPolicy(Defaults[.showInDock] ? .regular : .accessory)
             if change.oldValue && !change.newValue {
                 self.settingsWC.open()
