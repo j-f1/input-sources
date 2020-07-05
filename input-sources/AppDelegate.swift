@@ -55,14 +55,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func onMouse() {
         let event = NSApplication.shared.currentEvent!
-        let shouldCycle = Defaults[.clickToCycle]
-            && event.type == .leftMouseUp
-            && !event.modifierFlags.contains(.control)
-            && !event.modifierFlags.contains(.option)
-        if shouldCycle {
+        let override =
+            event.modifierFlags.contains(.control) ||
+            event.modifierFlags.contains(.option) ||
+            event.type == .rightMouseDown ||
+            event.type == .rightMouseUp
+        let shouldCycle = Defaults[.clickToCycle] ? !override : override
+            
+        if shouldCycle && (event.type == .leftMouseUp || event.type == .rightMouseUp) {
             selectNextLayout()
             render()
-        } else {
+        } else if !shouldCycle {
             statusItem.popUpMenu(menu)
         }
     }

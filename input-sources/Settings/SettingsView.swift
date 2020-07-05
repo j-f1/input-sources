@@ -31,7 +31,7 @@ struct SettingsView: View {
         Preferences.Container(contentWidth: 450.0) {
             Preferences.Section(label: title("Startup")) {
                 SettingsToggle(
-                    title: "Open Input Sources at Login",
+                    title: "Open Input Sources at login",
                     description: "Open Input Sources automatically at login.",
                     value: self.launchAtLogin
                 )
@@ -62,8 +62,10 @@ struct SettingsView: View {
                     value: self.$showMenuBG
                 )
                 SettingsToggle(
-                    title: "Click to cycle inputs",
-                    description: "When this is enabled, right-click or option-click the menu bar\nitem to open the menu.",
+                    title: "Click menu bar icon to cycle inputs",
+                    description: self.clickToCycle
+                        ? "Secondary-click, control-click, or option-click the menu bar\nicon to open the menu."
+                        : "Secondary-click, control-click, or option-click the menu bar\nicon to switch to the next input source.",
                     value: self.$clickToCycle
                 )
                 Button("Open Keyboard Settings…", action: { NSWorkspace.shared.openFile("/System/Library/PreferencePanes/Keyboard.prefPane") })
