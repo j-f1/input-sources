@@ -18,29 +18,34 @@ var currentKeyboardLayout: InputSource {
 struct InputSource: Equatable {
     let source: TISInputSource
 
-    var localizedName: String { self[string: kTISPropertyLocalizedName] }
-    var id: ID { self[string: kTISPropertyInputSourceID] }
-    var enabled: Bool { self[bool: kTISPropertyInputSourceIsEnabled] }
+    var localizedName: String { self[string: kTISPropertyLocalizedName]! }
+    var id: ID { self[string: kTISPropertyInputSourceID]! }
+    var enabled: Bool { self[bool: kTISPropertyInputSourceIsEnabled]! }
     
     func activate() {
         TISSelectInputSource(source)
     }
     
-    subscript(string key: CFString) -> String {
-        let value: CFString = getValue(for: key)
-        return value as String
+    subscript(string key: CFString) -> String? {
+        let value: CFString? = getValue(for: key)
+        return value as String?
     }
-    subscript(bool key: CFString) -> Bool {
-        let value: CFNumber = getValue(for: key)
-        return (value as NSNumber).boolValue
+    subscript(bool key: CFString) -> Bool? {
+        let value: CFNumber? = getValue(for: key)
+        return (value as NSNumber?)?.boolValue
     }
 
     // Thanks Martin R! https://stackoverflow.com/a/59522437/5244995
-    func getValue<T: AnyObject>(for key: CFString) -> T {
-        Unmanaged<T>
-            .fromOpaque(TISGetInputSourceProperty(source, key))
-            .takeUnretainedValue()
-            as T
+    func getValue<T: AnyObject>(for key: CFString) -> T? {
+        if let ptr = TISGetInputSourceProperty(source, key) {
+            return Unmanaged<T>
+                .fromOpaque(ptr)
+                .takeUnretainedValue()
+                as T
+        } else {
+            print(source, key)
+            return nil
+        }
     }
 }
 extension InputSource: Identifiable {
