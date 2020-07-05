@@ -26,6 +26,7 @@ struct SettingsView: View {
     @Default(.showInDock) var showInDock
     @Default(.showMenuBG) var showMenuBG
     @Default(.clickToCycle) var clickToCycle
+    @Default(.easyReset) var easyReset
     var body: some View {
         Preferences.Container(contentWidth: 450.0) {
             Preferences.Section(label: title("Startup")) {
@@ -35,16 +36,24 @@ struct SettingsView: View {
                     value: self.launchAtLogin
                 )
             }
-            Preferences.Section(label: title("Shortcut")) {
+            Preferences.Section(label: title("Source Switching")) {
                 VStack(alignment: .leading) {
                     KeyboardShortcuts.Recorder(for: .nextInputSource)
-                    Text("Switch to the next enabled input method (default: control+space)")
-                        .preferenceDescription()                }
+                    Group {
+                        Text("Keyboard shortcut to switch to the next enabled input")
+                        Text("method (default: control+space)")
+                    }.preferenceDescription()
+                }
+                SettingsToggle(
+                    title: "Easy Reset",
+                    description: "Waiting a few seconds before activating the shortcut to switch\nto the first listed input source instead of the next one.",
+                    value: self.$easyReset
+                )
             }
             Preferences.Section(label: title("Appearance")) {
                 SettingsToggle(
                     title: "Show in Dock",
-                    description: "Hiding the Input Sources icon from the Dock means you’ll need to quit\nit using its menu in the menu bar.",
+                    description: "Hiding the Input Sources icon from the Dock means you’ll need\nto quitit using its menu in the menu bar.",
                     value: self.$showInDock
                 )
                 SettingsToggle(
@@ -54,7 +63,7 @@ struct SettingsView: View {
                 )
                 SettingsToggle(
                     title: "Click to cycle inputs",
-                    description: "When this is enabled, right-click or option-click the menu bar item\nto open the menu.",
+                    description: "When this is enabled, right-click or option-click the menu bar\nitem to open the menu.",
                     value: self.$clickToCycle
                 )
                 Button("Open Keyboard Settings…", action: { NSWorkspace.shared.openFile("/System/Library/PreferencePanes/Keyboard.prefPane") })

@@ -9,6 +9,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength)
     let menu = NSMenu()
     var justOpened = true
+    var lastActivation = Date()
     
     lazy var aboutWC = NSStoryboard.main!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("AboutWC")) as! TransientWindowController
     lazy var settingsWC = NSStoryboard.main!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("SettingsWC")) as! TransientWindowController
@@ -113,6 +114,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func selectNextLayout() {
         let idx = enabledLayouts.firstIndex(of: currentKeyboardLayout)!
-        enabledLayouts[(idx + 1) % enabledLayouts.count].activate()
+        if !Defaults[.easyReset] || idx == 0 || lastActivation.distance(to: Date()) < 2 {
+            enabledLayouts[(idx + 1) % enabledLayouts.count].activate()
+        } else {
+            enabledLayouts.first?.activate()
+        }
+        lastActivation = Date()
     }
 }
