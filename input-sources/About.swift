@@ -32,7 +32,8 @@ struct AboutView: View {
             Text("Version \(getString(for: "CFBundleShortVersionString")) (\(getString(for: "CFBundleVersion")))")
             Text(getString(for: "NSHumanReadableCopyright"))
             ScrollableAttributedText(content: credits)
-                .frame(width: 350, height: 138)
+                .frame(width: 350, height: 165)
+                .border(Color.gray)
             HStack {
                 Button(action: {
                     NSWorkspace.shared.open(URL(string: "https://j-f1.github.io/input-sources/privacy")!)
@@ -56,7 +57,6 @@ struct ScrollableAttributedText: NSViewRepresentable {
 
     func makeNSView(context: NSViewRepresentableContext<ScrollableAttributedText>) -> NSViewType {
         let scrollView = NSTextView.scrollableTextView()
-        scrollView.borderType = .lineBorder
 
         let textView = scrollView.documentView as! NSTextView
         textView.drawsBackground = false
