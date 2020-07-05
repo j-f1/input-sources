@@ -4,6 +4,8 @@
 
 > Switch your keyboard layout with a click
 
+![screenshot](app-store-image.png)
+
 macOS provides an input source menu by default. I don’t like it because it displays the flag of the keyboard layout you’re using which is distracting. It also doesn’t let you quickly change the keyboard layout.
 
 This app replaces the default menu (not really, you have to remove the system one. Functionally, it does though).
