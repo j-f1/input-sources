@@ -14,4 +14,6 @@ Click the menu bar icon to switch to the next keyboard layout. Option-, Control-
 
 Hit Control+Space in any app to switch the keyboard layout.
 
-(If you want me to add configuration options, [send me a DM](https://twitter.com/jed_fox1) and I’ll consider it)
+(If you want me to add configuration options, [send me a DM](https://twitter.com/jed_fox1) or open an issue and I’ll consider it)
+
+*If you don’t want to download the app from the App Store (and don’t mind manually installing updates), you can download the app from [the GitHub Releases page](https://github.com/j-f1/input-sources/releases/latest).*
