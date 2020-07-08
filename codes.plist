@@ -69,7 +69,7 @@
 	<key>Croatian</key>
 	<string>HR</string>
 	<key>Arabic-North_Africa</key>
-	<string>AR</string>
+	<string>ﻉ</string>
 	<key>Brazilian-Pro</key>
 	<string>BR</string>
 	<key>2SetHangul</key>
@@ -177,11 +177,11 @@
 	<key>Hawaiian</key>
 	<string>Hawaiian</string>
 	<key>Albanian</key>
-	<string>Albanian</string>
+	<string>SQ</string>
 	<key>USExtended</key>
 	<string>ABC - Extended</string>
 	<key>GreekPolytonic</key>
-	<string>Greek - Polytonic</string>
+	<string>έ</string>
 	<key>Manipuri-MeeteiMayek</key>
 	<string>Manipuri (Meetei Mayek)</string>
 	<key>Swedish-Pro</key>
@@ -219,7 +219,7 @@
 	<key>Manipuri-Bengali</key>
 	<string>Manipuri (Bengali)</string>
 	<key>Arabic</key>
-	<string>Arabic</string>
+	<string>ﻉ</string>
 	<key>DVORAK - QWERTYCMD</key>
 	<string>Dvorak - QWERTY ⌘</string>
 	<key>Dhivehi-QWERTY</key>
@@ -231,7 +231,7 @@
 	<key>Oriya-QWERTY</key>
 	<string>Odia - QWERTY</string>
 	<key>Arabic PC</key>
-	<string>Arabic - PC</string>
+	<string>ﻉ</string>
 	<key>ROMAJI</key>
 	<string>Romaji</string>
 	<key>Telugu-QWERTY</key>
@@ -307,7 +307,7 @@
 	<key>Faroese</key>
 	<string>Faroese</string>
 	<key>Arabic-AZERTY</key>
-	<string>Arabic - AZERTY PC</string>
+	<string>ﻉ</string>
 	<key>Serbian-Latin</key>
 	<string>Serbian - Latin</string>
 	<key>Sinhala</key>
@@ -331,7 +331,7 @@
 	<key>Turkish-QWERTY-PC</key>
 	<string>Turkish Q</string>
 	<key>Arabic-QWERTY</key>
-	<string>Arabic - QWERTY</string>
+	<string>ﻉ</string>
 	<key>British-PC</key>
 	<string>British - PC</string>
 	<key>Konkani</key>
@@ -361,6 +361,6 @@
 	<key>ITABC</key>
 	<string>汉</string>
 	<key>Pinyin</key>
-	<string>漢</string>
+	<string>拼</string>
 </dict>
 </plist>
