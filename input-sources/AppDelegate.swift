@@ -8,7 +8,6 @@ let shortNames = (try? String(contentsOf: Bundle.main.url(forResource: "codes", 
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength)
     let menu = NSMenu()
-    var justOpened = true
     var lastActivation = Date()
     
     lazy var aboutWC = NSStoryboard.main!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("AboutWC")) as! TransientWindowController
@@ -45,14 +44,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }.tieToLifetime(of: self)
     }
     
-    func applicationDidBecomeActive(_: Notification) {
-        if justOpened {
-            justOpened = false
-        } else {
-            settingsWC.showWindow(self)
-        }
-    }
-
     @objc func onMouse() {
         let event = NSApplication.shared.currentEvent!
         let override =
