@@ -2,11 +2,12 @@ import Foundation
 import Carbon
 
 func fetchLayouts() -> [InputSource] {
-    let keyboards = TISCreateInputSourceList([kTISPropertyInputSourceType: kTISTypeKeyboardLayout] as CFDictionary, false)
-    let inputModes = TISCreateInputSourceList([kTISPropertyInputSourceType: kTISTypeKeyboardInputMode] as CFDictionary, false)
+    let sources = TISCreateInputSourceList([
+        kTISPropertyInputSourceCategory: kTISCategoryKeyboardInputSource!,
+        kTISPropertyInputSourceIsSelectCapable: true
+    ] as CFDictionary, false)
     return (
-        keyboards?.takeRetainedValue() as? [TISInputSource] ?? []
-        + (inputModes?.takeRetainedValue() as? [TISInputSource] ?? [])
+        sources?.takeRetainedValue() as? [TISInputSource] ?? []
     ).map(InputSource.init)
 }
 
