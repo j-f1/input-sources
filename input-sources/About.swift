@@ -34,15 +34,10 @@ struct AboutView: View {
             ScrollableAttributedText(content: credits)
                 .frame(width: 350, height: 165)
                 .border(Color.gray)
-            HStack {
-                Button(action: {
-                    NSWorkspace.shared.open(URL(string: "https://j-f1.github.io/input-sources/privacy")!)
-                }) {
-                    Text("Privacy Policy")
-                }
-                Button(action: { NSApp.terminate(nil) }) {
-                    Text("Quit")
-                }
+            Button(action: {
+                NSWorkspace.shared.open(URL(string: "https://j-f1.github.io/input-sources/privacy")!)
+            }) {
+                Text("Privacy Policy")
             }
         }
         .padding(.vertical, 20)
