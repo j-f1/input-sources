@@ -53,19 +53,17 @@ struct SettingsView: View {
             Preferences.Section(label: title("Appearance")) {
                 SettingsToggle(
                     title: "Show in Dock",
-                    description: "Hiding the Input Sources icon from the Dock means you’ll need\nto quitit using its menu in the menu bar.",
+                    description: "Hiding the Input Sources icon from the Dock means you’ll need\nto quit it using its menu in the menu bar.",
                     value: self.$showInDock
                 )
                 SettingsToggle(
                     title: "Show background in menu bar",
-                    description: "By default, the current input method is displayed in a box in the\nmenu bar. You can disable the box here.",
+                    description: "By default, the current input source is displayed inside a\ngray box in the menu bar. You can disable the box to\nshow the text slightly larger.",
                     value: self.$showMenuBG
                 )
                 SettingsToggle(
                     title: "Click menu bar icon to cycle inputs",
-                    description: self.clickToCycle
-                        ? "Secondary-click, control-click, or option-click the menu bar\nicon to open the menu."
-                        : "Secondary-click, control-click, or option-click the menu bar\nicon to switch to the next input source.",
+                    description: "Secondary-click, control-click, or option-click the menu bar\nicon to \(self.clickToCycle ? "open the menu" : "switch to the next input source").",
                     value: self.$clickToCycle
                 )
                 Button("Open Keyboard Settings…", action: { NSWorkspace.shared.openFile("/System/Library/PreferencePanes/Keyboard.prefPane") })
