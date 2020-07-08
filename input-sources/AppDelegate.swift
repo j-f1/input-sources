@@ -81,7 +81,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Send Feedback…", action: #selector(sendFeedback), keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit Input Sources", action: #selector(NSApplication.terminate), keyEquivalent: "q"))
 
         let name = String(currentId.dropFirst(currentId.lastIndex(of: ".")!.utf16Offset(in: currentId) + 1))
 //        print(name, shortNames!)
