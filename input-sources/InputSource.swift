@@ -1,13 +1,18 @@
 import Foundation
 import Carbon
 
-var allLayouts: [InputSource] {
+func fetchLayouts() -> [InputSource] {
     let keyboards = TISCreateInputSourceList([kTISPropertyInputSourceType: kTISTypeKeyboardLayout] as CFDictionary, false)
     let inputModes = TISCreateInputSourceList([kTISPropertyInputSourceType: kTISTypeKeyboardInputMode] as CFDictionary, false)
     return (
         keyboards?.takeRetainedValue() as? [TISInputSource] ?? []
         + (inputModes?.takeRetainedValue() as? [TISInputSource] ?? [])
     ).map(InputSource.init)
+}
+
+var allLayouts = fetchLayouts()
+func updateLayouts() {
+    allLayouts = fetchLayouts()
 }
 
 var enabledLayouts: [InputSource] { allLayouts.filter { $0.enabled } }

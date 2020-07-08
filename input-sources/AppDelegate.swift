@@ -45,6 +45,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func onMouse() {
+        updateLayouts()
+        render()
         let event = NSApplication.shared.currentEvent!
         let override =
             event.modifierFlags.contains(.control) ||
@@ -66,6 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func render() {
+        updateLayouts()
         statusItem.length = Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength
         menu.removeAllItems()
         let currentId = currentKeyboardLayout.id
