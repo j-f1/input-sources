@@ -13,7 +13,7 @@ import KeyboardShortcuts
 import Preferences
 
 func title(_ text: String) -> () -> Text {
-    { Text(text).fontWeight(.semibold) }
+    { Text(text + ":") }
 }
 
 var _launchAtLogin = LaunchAtLogin.isEnabled
