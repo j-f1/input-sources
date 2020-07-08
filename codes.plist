@@ -358,5 +358,9 @@
 	<string>CA</string>
 	<key>Icelandic</key>
 	<string>IS</string>
+	<key>ITABC</key>
+	<string>汉</string>
+	<key>Pinyin</key>
+	<string>漢</string>
 </dict>
 </plist>
