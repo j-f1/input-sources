@@ -15,11 +15,11 @@ var currentKeyboardLayout: InputSource {
     allLayouts[allLayouts.firstIndex(of: InputSource(source: TISCopyCurrentKeyboardInputSource().takeRetainedValue()))!]
 }
 
-struct InputSource: Equatable {
+struct InputSource: Equatable, Identifiable {
     let source: TISInputSource
 
     var localizedName: String { self[string: kTISPropertyLocalizedName]! }
-    var id: ID { self[string: kTISPropertyInputSourceID]! }
+    var id: String { self[string: kTISPropertyInputSourceID]! }
     var enabled: Bool { self[bool: kTISPropertyInputSourceIsEnabled]! }
     
     func activate() {
@@ -47,7 +47,4 @@ struct InputSource: Equatable {
             return nil
         }
     }
-}
-extension InputSource: Identifiable {
-    typealias ID = String
 }
