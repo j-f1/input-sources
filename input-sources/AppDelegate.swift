@@ -71,6 +71,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         updateLayouts()
         statusItem.length = Defaults[.showMenuBG] ? 25 : NSStatusItem.variableLength
         menu.removeAllItems()
+
+        #if DEBUG
+        menu.addItem(NSMenuItem(title: "Dev Version", action: nil, keyEquivalent: ""))
+        menu.addItem(.separator())
+        #endif
+
         let currentId = currentKeyboardLayout.id
         for layout in enabledLayouts {
             let item = NSMenuItem(title: layout.localizedName, action: #selector(selectLayout(_:)), keyEquivalent: "")
