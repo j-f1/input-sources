@@ -17,6 +17,11 @@ class AboutViewController: NSHostingController<AboutView> {
         let rv = AboutView(credits: credits)
         super.init(coder: coder, rootView: rv)
     }
+    override func viewDidLayout() {
+        DispatchQueue.main.async {
+            self.view.window?.setContentSize(self.view.intrinsicContentSize)
+        }
+    }
 }
 
 func getString(for key: String) -> String {
