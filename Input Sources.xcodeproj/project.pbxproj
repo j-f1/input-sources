@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85616BD923A93D06008C3348 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85616BD823A93D06008C3348 /* LaunchAtLogin.framework */; };
-		85616BDA23A93D06008C3348 /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85616BD823A93D06008C3348 /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85616BDE23A93EE0008C3348 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 85616BDD23A93EE0008C3348 /* Defaults */; };
 		85616BE023A94023008C3348 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BDF23A94023008C3348 /* Constants.swift */; };
 		85616BE223A988B1008C3348 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85616BE123A988B1008C3348 /* About.swift */; };
 		859B341E24AFD42B00A25824 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B341D24AFD42B00A25824 /* SettingsView.swift */; };
 		859EE5A923B8F988000175D0 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859EE5A823B8F988000175D0 /* InputSource.swift */; };
+		85A00D7B2596686200CD6863 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 85A00D7A2596686200CD6863 /* LaunchAtLogin */; };
 		85A3033223E3934000EC0787 /* codes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A3033123E3934000EC0787 /* codes.plist */; };
 		85B36F9D24AFDD4F004C89DC /* SettingsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B36F9C24AFDD4F004C89DC /* SettingsToggle.swift */; };
 		85B36F9F24AFDDB1004C89DC /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B36F9E24AFDDB1004C89DC /* SettingsSection.swift */; };
@@ -26,20 +25,6 @@
 		85CD64B623A808F00008C06E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85CD64B423A808F00008C06E /* Main.storyboard */; };
 		85D1FC8E23B959F1005E954E /* TransientWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1FC8D23B959F1005E954E /* TransientWindowController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		85616BDB23A93D06008C3348 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				85616BDA23A93D06008C3348 /* LaunchAtLogin.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8559DA5723AAE1BE00F385ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -69,8 +54,8 @@
 			files = (
 				85616BDE23A93EE0008C3348 /* Defaults in Frameworks */,
 				85B36FA424AFE3FC004C89DC /* Preferences in Frameworks */,
+				85A00D7B2596686200CD6863 /* LaunchAtLogin in Frameworks */,
 				85B7F93324AFD24100DDA8F4 /* KeyboardShortcuts in Frameworks */,
-				85616BD923A93D06008C3348 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,8 +129,6 @@
 				85CD648A23A7F85B0008C06E /* Sources */,
 				85CD648B23A7F85B0008C06E /* Frameworks */,
 				85CD648C23A7F85B0008C06E /* Resources */,
-				85616BDB23A93D06008C3348 /* Embed Frameworks */,
-				85616BE323A9E646008C3348 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -156,6 +139,7 @@
 				85616BDD23A93EE0008C3348 /* Defaults */,
 				85B7F93224AFD24100DDA8F4 /* KeyboardShortcuts */,
 				85B36FA324AFE3FC004C89DC /* Preferences */,
+				85A00D7A2596686200CD6863 /* LaunchAtLogin */,
 			);
 			productName = "Input Sources";
 			productReference = 85CD648E23A7F85B0008C06E /* Input Sources.app */;
@@ -190,6 +174,7 @@
 				85616BDC23A93EE0008C3348 /* XCRemoteSwiftPackageReference "Defaults" */,
 				85B7F93124AFD24100DDA8F4 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				85B36FA224AFE3FC004C89DC /* XCRemoteSwiftPackageReference "Preferences" */,
+				85A00D792596686100CD6863 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = 85CD648F23A7F85B0008C06E /* Products */;
 			projectDirPath = "";
@@ -213,26 +198,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		85616BE323A9E646008C3348 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		85CD648A23A7F85B0008C06E /* Sources */ = {
@@ -460,6 +425,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		85A00D792596686100CD6863 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		85B36FA224AFE3FC004C89DC /* XCRemoteSwiftPackageReference "Preferences" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Preferences";
@@ -483,6 +456,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 85616BDC23A93EE0008C3348 /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
+		};
+		85A00D7A2596686200CD6863 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85A00D792596686100CD6863 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
 		};
 		85B36FA324AFE3FC004C89DC /* Preferences */ = {
 			isa = XCSwiftPackageProductDependency;

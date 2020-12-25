@@ -16,13 +16,9 @@ func title(_ text: String) -> () -> Text {
     { Text(text + ":") }
 }
 
-var _launchAtLogin = LaunchAtLogin.isEnabled
 
 struct SettingsView: View {
-    var launchAtLogin = Binding(get: { _launchAtLogin }, set: { enabled in
-        LaunchAtLogin.isEnabled = enabled
-        _launchAtLogin = enabled
-    })
+    @ObservedObject var launchAtLogin = LaunchAtLogin.observable
     @Default(.showInDock) var showInDock
     @Default(.showMenuBG) var showMenuBG
     @Default(.clickToCycle) var clickToCycle
@@ -33,7 +29,7 @@ struct SettingsView: View {
                 SettingsToggle(
                     title: "Open Input Sources at login",
                     description: "Open Input Sources automatically at login.",
-                    value: self.launchAtLogin
+                    value: $launchAtLogin.isEnabled
                 )
             }
             Preferences.Section(label: title("Source Switching")) {
