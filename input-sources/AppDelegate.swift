@@ -109,7 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func sendFeedback(_ sender: NSMenuItem) {
-        NSWorkspace.shared.open(URL(string: "https://github.com/j-f1/input-sources/issues/new")!)
+        NSWorkspace.shared.open(URL(string: "https://j-f1.github.io/input-sources/contact.html")!)
     }
 
     @objc func selectLayout(_ sender: NSMenuItem) {
