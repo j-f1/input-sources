@@ -35,7 +35,7 @@ struct AboutView: View {
             Image(decorative: "App Icon")
             Text(getString(for: "CFBundleName")).font(.headline)
             Text("Version \(getString(for: "CFBundleShortVersionString")) (\(getString(for: "CFBundleVersion")))")
-            Text(getString(for: "NSHumanReadableCopyright"))
+            Text(getString(for: "NSHumanReadableCopyright").components(separatedBy: ". ").joined(separator: ".\n"))
             ScrollableAttributedText(content: credits)
                 .frame(width: 350, height: 165)
                 .border(Color.gray)
