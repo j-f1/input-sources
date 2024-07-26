@@ -1,6 +1,7 @@
 import Cocoa
 import Defaults
 import KeyboardShortcuts
+import Carbon
 
 let shortNames = (try? String(contentsOf: Bundle.main.url(forResource: "codes", withExtension: "plist")!).propertyList() as? [String: String])
 
@@ -31,7 +32,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         Defaults.observe(.showMenuBG, options: [.initial], handler: { _ in self.render() })
             .tieToLifetime(of: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(render), name: NSTextInputContext.keyboardSelectionDidChangeNotification, object: nil)
+        DistributedNotificationCenter.default().addObserver(
+            self,
+            selector: #selector(render),
+            name: kTISNotifySelectedKeyboardInputSourceChanged as NSNotification.Name?,
+            object: nil,
+            suspensionBehavior: .deliverImmediately
+        )
 
         KeyboardShortcuts.onKeyUp(for: .nextInputSource, action: selectNextLayout)
 
